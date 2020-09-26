@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Administrador</title>
+  <title>Creacion de programas</title>
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
   <link rel="shortcut icon" href="favicon_16.ico"/>
   <link rel="bookmark" href="favicon_16.ico"/>

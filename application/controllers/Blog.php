@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Panel extends CI_Controller {
+class Blog extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -20,10 +20,13 @@ class Panel extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('panel');
+		$this->load->view('crear_publicacion');
 	}
 
-	public function login(){
-		$this->load->view('login');
+	public function listar_blogs()
+	{
+		$this->load->view('listar_blogs');
 	}
+
+	
 }

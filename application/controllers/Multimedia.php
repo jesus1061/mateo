@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Panel extends CI_Controller {
+class Multimedia extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -18,12 +18,18 @@ class Panel extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
+	public function imagen_interna()
 	{
-		$this->load->view('panel');
+		$this->load->view('crear_imagen_interna');
 	}
 
-	public function login(){
-		$this->load->view('login');
+	public function imagen_externa()
+	{
+		$this->load->view('crear_imagen_externa');
+	}
+
+	public function video_externo()
+	{
+		$this->load->view('crear_video_externo');
 	}
 }

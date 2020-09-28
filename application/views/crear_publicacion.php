@@ -1,161 +1,258 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <meta charset="utf-8">
-  <title>Creacion de programas</title>
-  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-  <link rel="shortcut icon" href="favicon_16.ico"/>
-  <link rel="bookmark" href="favicon_16.ico"/>
-  <!-- site css -->
-  <link rel="stylesheet" href="plantilla_back/css/site.min.css">
-    <link rel="stylesheet" href="plantilla_back/css/personalizacion.css">
-  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800,700,400italic,600italic,700italic,800italic,300italic" rel="stylesheet" type="text/css">
-  <!-- <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'> -->
-  <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
-    <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
-    <![endif]-->
-    <script type="text/javascript" src="plantilla_back/js/site.min.js"></script>
-     <script type="text/javascript" src="plantilla_back/js/jquery-3.5.1.min"></script>
-    <script type="text/javascript" src="plantilla_back/js/mateo.js"></script>
-  </head>
-  <body>
-    <!--nav-->
-    <nav role="navigation" class="navbar navbar-custom">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header" >
-          <button data-target="#bs-content-row-navbar-collapse-5" data-toggle="collapse" class="navbar-toggle" type="button">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a href="#" class="navbar-brand">Bootflat-Admin</a>
+  <meta charset="UTF-8">
+  <title>Mateo</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  
+  <link rel="stylesheet" href="plantilla_back/css/personalizacion.css">
+  
+  <script type="text/javascript" src="plantilla_back/js/jquery.js"></script>
+  <script src="plantilla_back/js/mateo2.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <div class="container">
+    <div id="foco" style="display: none">
+
+    </div>
+    <!-- <input type="text" value="<?php echo $_SESSION['foco']; ?>" class="foco" style="display: none">-->
+    
+
+    <?php
+    include "header.php";
+    ?>
+
+
+    <div class="contenedor-dinamico-admin">
+      <div class="contenedor-ajustado">
+        <?php
+        //include_once "../../controller/blog/blog_controller.php";
+       // $instancia = new Blog_controller();
+       // $peticion_controlador = $instancia -> listar_archivos_controller();
+
+
+
+        ?>
+        <div  id="formulario-blog">
+
+          <?php
+          //foreach($peticion_album as $album){
+
+       // }
+        ?>
+
+        <form action="../../controller/enrutador/route.php" method="post" class="formulario">
+          <div class="encabezado-formulario">
+           Editar album <?php //echo $album['album_titulo'];?>
+         </div>
+         <div class="form-control" style="display: none;">
+
+          <input type="hidden" id="tipo_peticion" value="20"   class="input-form" name="tipo_peticion">
+          <input type="text" id="tipo_peticion" value="<?php echo $album_id?>"   class="input-form" name="album_id">
+
+
         </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div id="bs-content-row-navbar-collapse-5" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="getting-started.html">Getting Started</a></li>
-            <li class="active"><a href="index.html">Documentation</a></li>
-            <!-- <li class="disabled"><a href="#">Link</a></li> -->
-            <li class="dropdown">
-              <a data-toggle="dropdown" class="dropdown-toggle" href="#">Silverbux <b class="caret"></b></a>
-              <ul role="menu" class="dropdown-menu">
-                <li class="dropdown-header">Setting</li>
-                <li><a href="#">Action</a></li>
-                <li class="divider"></li>
-                <li class="active"><a href="#">Separated link</a></li>
-                <li class="divider"></li>
-                <li class="disabled"><a href="#">Signout</a></li>
-              </ul>
-            </li>
-          </ul>
+        <div class="form-control">
+          <label for="" class="label-form">Titulo del banner</label>
+          <br>
+          <br>
+          <input type="text" class="input-form" id="titulo_programa"  name="album_titulo" value="<?php //echo $album['album_titulo']?>" required >
 
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-    <!--header-->
-    <div class="container-fluid" >
-      <!--documents-->
-      <div class="row row-offcanvas row-offcanvas-left" >
-       
 
-<?php
-include_once "siderbar.php";
-?>
-
-          <div class="col-xs-12 col-sm-9 content">
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h3 class="panel-title"><a href="javascript:void(0);" class="toggle-sidebar"><span class="fa fa-angle-double-left" data-toggle="offcanvas" title="Maximize Panel"></span></a> Modulo para  banners</h3>
-              </div>
-              <div class="panel-body">
+        </div>
 
 
 
 
 
 
+        <div class="form-control">
+          <label for="" class="label-form">Cargar banner a utilizar</label>
+          <br>
+          <br>
+          <input type="text" id="btn-abrir-multimedia" name="album_portada_principal" value='<?php echo $album['album_portada_principal']?>'   required  class="input-form" readonly style="background-color: gray; color: white; font-weight: 900; cursor: pointer" >
 
+          <div class="container-imagenes">
+           <div class="archivos">
+            <?php
+            //foreach($peticion_controlador as $archivo){
+           // echo "<div class='archivo' rel='".$archivo['ruta_basica']."' title='".$archivo['procedencia']."'>
+             // <div class='cont-archivo' id='".$archivo['id_archivo']."'>
 
+                //'".$archivo['archivo']."'
+                //<br>
+               // <span class='nombre-archivo-label'>Nombre + extencion</span>
+                //<span class='datos-archivo'>'".$archivo['peso_archivo']."'</span>
+               // <br>
+                //<div class='opciones-archivo'>
+                //  <i class='fa fa-trash' id='btn-borrar-archivo' title='".$archivo['id_archivo']."'></i>
 
-
-                <div class="content-row">
-
-                  <div class="panel panel-default">
-                    <div class="panel-heading">
-                      <div class="panel-title"><b>Formulario para creación de un banner</b>
-                      </div>
-
-                      <div class="panel-options">
-                        <a class="bg" data-target="#sample-modal-dialog-1" data-toggle="modal" href="#sample-modal"><i class="entypo-cog"></i></a>
-                        <a data-rel="collapse" href="#"><i class="entypo-down-open"></i></a>
-                        <a data-rel="close" href="#!/tasks" ui-sref="Tasks"><i class="entypo-cancel"></i></a>
-                      </div>
-                    </div>
-
-                    <div class="panel-body">
-                      <form role="form">
-                        <div class="form-group">
-                          <label>Nombre del banner</label>
-                          <input type="text" class="form-control" >
-                        </div>
-                        <div class="form-group">
-                          <label>Descripcion</label>
-                          <input type="text" class="form-control">
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputFile">Seleccione archivo para su banner</label>
-
-                          <p class="help-block" style="color:red; font-weight: 900;">Dar click para cargar los archivos que utilizara.</p>
-                          <input type="text" placeholder="Click para seleccionar un archivo" disabled="" class="form-control">
-                        </div>
-
-                        <div class="form-group">
-                         <label for="exampleInputFile">Tipo de archivo a cargar al servidor</label>
-                         
-                         
-                         <select name="selecter_basic" class="selecter_3" data-selecter-options='{"cover":"true"}'>
-                          <option value="1">One</option>
-                          <option value="2">Two</option>
-                          <option value="3">Three</option>
-                          <option value="4">Four</option>
-                          <option value="5">Five</option>
-                        </select>
-                      </div>
-
-                      <button type="submit" class="btn btn-success">Crear banner</button>
-                    </form>
-                  </div>
-                </div>
-
-              </div>
+                //</div>
+              //</div>
+            //</div>";
+        //  }
+          ?>
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-            </div><!-- panel body -->
-          </div>
-        </div><!-- content -->
+        </div>
       </div>
+
+
     </div>
-    <!--footer-->
-    
-  </body>
-  </html>
+
+
+
+
+
+    <center><input type="submit" id="btn-activar-formulario" value="Editar componente" style="display:block;"></center> 
+  </form>
+</div>
+<div class="respuesta">
+
+</div>
+<script>
+
+
+
+  $("#btn-abrir-multimedia").click(function(){
+   $(".container-imagenes").css("display","block");
+ });
+
+
+
+  $(".archivo").click(function(){
+
+   var tipo_archivo = $(this).attr("title");
+
+   if(tipo_archivo == "imagen_externa" ){
+    var id = $(this).attr("rel");
+
+    $("#btn-abrir-multimedia").attr(id);
+    var imagen ='<img class="img-archivo" src="'+id+'"></img>';
+    $("#btn-abrir-multimedia").attr("value",imagen);
+  }
+
+  if(tipo_archivo == "imagen_interna"){
+    var id = $(this).attr("rel");
+
+    $("#btn-abrir-multimedia").attr(id);
+    var imagen ='<img class="img-archivo" src="'+id+'"></img>';
+    $("#btn-abrir-multimedia").attr("value",imagen);
+  }
+
+  if(tipo_archivo == "video_externo"){
+    var id = $(this).attr("rel");
+
+    $("#btn-abrir-multimedia").attr(id);
+    var imagen =id;
+    $("#btn-abrir-multimedia").attr("value",imagen);
+  }
+
+});
+
+  function ajax(id){
+
+//alert(id);
+$.ajax({
+                data:  { codigo_multimedia:id , tipo_peticion:10}, //datos que se envian a traves de ajax
+                url:   '../../controller/enrutador/route.php', //archivo que recibe la peticion
+                type:  'post', //método de envio
+                beforeSend: function () {
+                  //$(".respuesta").html("Procesando, espere por favor...");
+                },
+                success:  function (response) { //una vez que el archivo recibe el request lo procesa y lo devuelve
+                  //$(".respuesta").html(response);
+                }
+              });
+
+};
+$("#subir-archivos").click(function(){
+  $(".contenedor-ajustado").load("subir_archivos.php");
+});
+
+$("#ver-archivos").click(function(){
+  $(".contenedor-ajustado").load("archivos_multimedia.php");
+});
+
+$("#agregar_slider").click(function(){
+  $(".contenedor-ajustado").load("crear_slider.php");
+});
+
+$("#ver_elementos_slider").click(function(){
+  $(".contenedor-ajustado").load("tabla_banners.php");
+});
+$("#crear_album").click(function(){
+  $(".contenedor-ajustado").load("crear_album.php");
+});
+
+$("#crear_elemento_album").click(function(){
+  $(".contenedor-ajustado").load("crear_elemento_galeria.php");
+});
+
+$("#ver-album").click(function(){
+  $(".contenedor-ajustado").load("ver_albumnes.php");
+});
+
+$("#crear-blog").click(function(){
+  $(".contenedor-ajustado").load("formulario.php");
+});
+
+$("#ver-blog").click(function(){
+    //alert("Hola");
+    $(".contenedor-ajustado").load("tabla_publicaciones.php");
+  });
+
+$("#crear-programa").click(function(){
+  $(".contenedor-ajustado").load("crear_programa.php");
+});
+
+$("#ver-programas").click(function(){
+  $(".contenedor-ajustado").load("tabla_programas.php");
+});
+
+$("#crear-talento").click(function(){
+  $(".contenedor-ajustado").load("crear_talento.php");
+});
+
+$("#ver-talento").click(function(){
+  $(".contenedor-ajustado").load("ver_talento.php");
+});
+
+$(".btn-cerrar-sesion").click(function(){
+  $.ajax({
+                data:  {tipo_peticion:30}, //datos que se envian a traves de ajax
+                url:   '../../controller/enrutador/route.php', //archivo que recibe la peticion
+                type:  'post', //método de envio
+                beforeSend: function () {
+                  //$(".respuesta").html("Procesando, espere por favor...");
+                },
+                success:  function (response) { //una vez que el archivo recibe el request lo procesa y lo devuelve
+                  $(".david").html(response);
+
+                  window.location.href = "login.php";
+
+                }
+              });
+});
+
+
+
+</script>
+
+</div>
+
+</div>
+
+
+<div class="david"></div>
+</div>
+
+
+</body>
+</html>

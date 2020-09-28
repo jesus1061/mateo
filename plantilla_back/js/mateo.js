@@ -1,14 +1,6 @@
 $(document).ready(function(){
 
-	$(".sub").hide();
-	
-	
-	
-
-	$(".cat").click(function(){
-	//$(this).parent().children(".sub").css("display","block");
-	$(this).parent().children(".sub").toggle();
-});
+//alert("Hola");
 
 	//Enrutamiento
 	$("#opcion1").click(function(){ /*Enrutamiento para crear un banner*/
@@ -51,8 +43,13 @@ $(document).ready(function(){
 		window.location.href = 'multimedia/imagen_externa';
 	});
 
-$("#opcion10").click(function(){ /*Enrutamiento para crear un video externo*/
+	$("#opcion11").click(function(){ /*Enrutamiento para crear un video externo*/
 		window.location.href = 'multimedia/video_interno';
+	});
+
+
+	$("#opcion12").click(function(){ /*Enrutamiento para crear un video externo*/
+		window.location.href = 'multimedia/lanzar_vista_listar_archivos';
 	});
 	
 });

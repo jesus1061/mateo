@@ -54,5 +54,9 @@ $(document).ready(function(){
 		window.location.href = '../multimedia/video_externo';
 	});
 
+	$("#opcion12").click(function(){ /*Enrutamiento para crear un video externo*/
+		window.location.href = '../multimedia/lanzar_vista_listar_archivos';
+	});
+
 	
 });

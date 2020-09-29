@@ -1,4 +1,5 @@
 <?php
+include_once "application/models/modelo_programa.php";
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Programas extends CI_Controller {
@@ -26,6 +27,27 @@ class Programas extends CI_Controller {
 	public function listar_programas()
 	{
 		$this->load->view('listar_programas');
+	}
+
+
+	public function crear_programa(){
+		//print_r($_POST);
+		extract($_POST);
+		$instancia = new modelo_programa();
+		$peticion_insert = $instancia -> crear_programa($titulo_programa , $contenido_programa , $portada_programa , $tipo_portada);
+
+		echo '<script>
+		alert("Programa creado con exito");
+		window.location.href = "listar_programas";
+		</script>';
+
+	}
+
+
+	public function consultar_programas(){
+		$instancia = new modelo_programa();
+		$peticion_select = $instancia -> consultar_programas();
+		return $peticion_select;
 	}
 	
 }

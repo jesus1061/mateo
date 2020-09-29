@@ -1,4 +1,5 @@
 <?php
+include_once "application/models/banner_model.php";
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Banner extends CI_Controller {
@@ -23,10 +24,30 @@ class Banner extends CI_Controller {
 		$this->load->view('crear_banner.php');
 	}
 
-
+	/*Lanza la vista para observar banners*/
 	public function listar_banners()
 	{
 		$this->load->view('listar_banners.php');
+	}
+
+
+	public function crear_banner(){
+		extract($_POST);
+		//print_r($_POST);
+		$instancia = new Banner_model();
+		$peticion_insert = $instancia -> crear_banner($banner_nombre , $banner_imagen , $tipo_banner);
+
+		echo '<script>
+		alert("Banner creado con exito");
+		window.location.href = "listar_banners";
+		</script>';
+	}
+
+
+	public function consultar_banners(){
+		$instancia = new Banner_model();
+		$peticion_select = $instancia -> consultar_banners();
+		return $peticion_select;
 	}
 
 	

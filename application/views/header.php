@@ -32,10 +32,10 @@
             <li id="menu-blog">Modulo Slider</li>
           </div>
           <div class="item-option-sub">
-            <li id="opcion">Crear elemento</li>
+            <li id="opcion1">Crear elemento</li>
           </div>
           <div class="item-option-sub">
-            <li id="opcion">ver elementos</li>
+            <li id="opcion2">ver elementos</li>
           </div>
         </div>
 

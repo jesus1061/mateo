@@ -4,7 +4,7 @@ class Modelo_multimedia {
 
 	/*Modelo para cargar imagenes internas*/
 	public function subir_imagen_interna($nombre_archivo , $tipo_archivo , $archivo){
-		$archivo_img = '<img src="../'.$archivo.'" class="img-archivo">';
+		$archivo_img = '<img src="../'.$archivo.'" class="img-archivo" id="'.$tipo_archivo.'">';
 		$instancia_conexion = new Conexion();
 		$pdo = $instancia_conexion -> obtener_conexion();
 		$sql = $pdo->prepare('INSERT INTO multimedia (nombre_archivo, tipo_archivo , archivo ) VALUES (:arg_nombre_archivo  ,  :tipo_archivo,  :arg_archivo_ruta)');
@@ -17,7 +17,7 @@ class Modelo_multimedia {
 
 	/*Modelo para cargar imagenes internas*/
 	public function subir_imagen_externa($nombre_archivo , $tipo_archivo , $archivo){
-		$archivo_img = '<img src="'.$archivo.'" class="img-archivo">';
+		$archivo_img = '<img src="'.$archivo.'" class="img-archivo" id="'.$tipo_archivo.'">';
 		$instancia_conexion = new Conexion();
 		$pdo = $instancia_conexion -> obtener_conexion();
 		$sql = $pdo->prepare('INSERT INTO multimedia (nombre_archivo, tipo_archivo , archivo ) VALUES (:arg_nombre_archivo  ,  :tipo_archivo,  :arg_archivo_ruta)');
@@ -29,7 +29,7 @@ class Modelo_multimedia {
 
 
 	public function subir_video_externo($nombre_archivo , $tipo_archivo , $archivo){
-		$archivo_img = '<iframe src="'.$archivo.'" class="img-archivo"></iframe>';
+		$archivo_img = '<iframe src="'.$archivo.'" class="img-archivo" id="'.$tipo_archivo.'"></iframe>';
 		$instancia_conexion = new Conexion();
 		$pdo = $instancia_conexion -> obtener_conexion();
 		$sql = $pdo->prepare('INSERT INTO multimedia (nombre_archivo, tipo_archivo , archivo ) VALUES (:arg_nombre_archivo  ,  :tipo_archivo,  :arg_archivo_ruta)');

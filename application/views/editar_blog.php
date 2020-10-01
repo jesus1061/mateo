@@ -3,7 +3,7 @@ include_once "application/controllers/select_controller.php";
 $instancia = new Select_controller();
 $peticion_select = $instancia -> listar_archivos();
 extract($_POST);
-print_r($_POST);
+//print_r($_POST);
 $peticion_select_unico = $instancia -> listar_publicacion_unica($blog_id);
 foreach($peticion_select_unico as $publicacion){
 
@@ -20,7 +20,7 @@ foreach($peticion_select_unico as $publicacion){
   <link rel="stylesheet" href="../plantilla_back/css/personalizacion.css">
   
   <script type="text/javascript" src="../plantilla_back/js/jquery.js"></script>
-  <script src="../plantilla_back/js/mateo2.js"></script>
+  <script src="../plantilla_back/js/enrutador.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -73,7 +73,7 @@ foreach($peticion_select_unico as $publicacion){
            <label for="" class="label-archivo campos-archivo" style="color:black; font-weight:900;">Contenido publicación <span style="color:red; font-weight:900;">(Este campo es obligatorio que lo llenes)</span> </label>
            <br>
            <br>
-           <input type="text" id="contenido" name="contenido_pub" style="width: 92%; height: 100px; resize:none" placeholder="Contenido de la publicación" value="<?php echo $publicacion['titulo_pub'] ?>">
+           <input type="text" id="contenido" name="contenido_pub" style="width: 92%; height: 100px; resize:none" placeholder="Contenido de la publicación" value="<?php echo $publicacion['contenido_pub'] ?>">
 
 
          </div>
@@ -197,10 +197,11 @@ foreach($peticion_select_unico as $publicacion){
         var ruta_seleccionada = $(this).attr("src");
         var ruta_convertida = ruta_seleccionada.slice(3);
         $("#btn-abrir-multimedia").val(ruta_convertida);
-        validacion_banner = 1;
+        validacion_programa = 1;
       } else{
        var ruta_seleccionada = $(this).attr("src");
        $("#btn-abrir-multimedia").val(ruta_seleccionada);
+       validacion_programa = 1;
      }
 
    });

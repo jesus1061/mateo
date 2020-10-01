@@ -19,7 +19,7 @@ class Blog extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
+	public function inicio()
 	{
 		$this->load->view('crear_publicacion');
 	}
@@ -65,6 +65,25 @@ class Blog extends CI_Controller {
 		//print_r($_POST);
 		$instancia = new Blog_model();
 		$peticion_update = $instancia -> editar_publicacion_datos($blog_id , $titulo_pub , $contenido_pub , $autor_pub , $portada_pub , $tipo_portada);
+		echo '<script>
+		alert("Publicación actualizada con exito");
+		window.location.href = "listar_blogs";
+		</script>';
+	}
+
+
+	public function eliminar_elemento(){
+		extract($_POST);
+		//print_r($_POST);
+		$instancia = new Blog_model();
+		$peticion_delete = $instancia ->eliminar_elemento($archivo_id);
+
+		echo '<script>
+		alert("Publicación editada con exito");
+		window.location.href = "listar_blogs";
+		</script>';
+		
+
 	}
 
 	

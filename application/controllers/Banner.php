@@ -19,7 +19,7 @@ class Banner extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
+	public function inicio()
 	{
 		$this->load->view('crear_banner.php');
 	}
@@ -56,16 +56,31 @@ class Banner extends CI_Controller {
 
 
 	public function editar_banner_datos(){
-		print_r($_POST);
+		//print_r($_POST);
 		extract($_POST);
 		$instancia = new Banner_model();
 		$peticion_update = $instancia -> editar_banner_datos($banner_id , $banner_nombre , $banner_imagen , $tipo_banner);
+		echo '<script>
+		alert("Banner modificado con exito");
+		window.location.href = "listar_banners";
+		</script>';
 	}
 
 	public function consultar_banner_unico($elemento){
 		$instancia = new Banner_model();
 		$peticion_select = $instancia -> consultar_banner_unico($elemento);
 		return $peticion_select;
+	}
+
+	public function eliminar_banner(){
+		$instancia = new Banner_model();
+		extract($_POST);
+		//print_r($_POST);
+		$peticion_delete = $instancia -> eliminar_elemento($archivo_id);
+		echo '<script>
+		alert("Banner eliminado con exito");
+		window.location.href = "listar_banners";
+		</script>';
 	}
 
 	

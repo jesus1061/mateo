@@ -13,17 +13,17 @@
             <li  id="menu-multimedia">Modulo Multimedia</li>
           </div>
           <div class="item-option-sub">
-            <li id="opcion9">Cargar imagenes internas</li>
+            <li id="opcion1">Cargar imagenes internas</li>
           </div>
           <div class="item-option-sub">
-            <li id="opcion10">Cargar imagenes externas</li>
+            <li id="opcion2">Cargar imagenes externas</li>
           </div>
 
           <div class="item-option-sub">
-            <li id="opcion11">Cargar videos externos</li>
+            <li id="opcion3">Cargar videos externos</li>
           </div>
           <div class="item-option-sub">
-            <li id="opcion12">Ver archivos </li>
+            <li id="opcion4">Ver archivos </li>
           </div>
         </div>
 
@@ -32,10 +32,10 @@
             <li id="menu-blog">Modulo Slider</li>
           </div>
           <div class="item-option-sub">
-            <li id="opcion1">Crear elemento</li>
+            <li id="opcion5">Crear Banner</li>
           </div>
           <div class="item-option-sub">
-            <li id="opcion2">ver elementos</li>
+            <li id="opcion6">ver Banners</li>
           </div>
         </div>
 
@@ -44,10 +44,10 @@
             <li id="menu-blog">Modulo  galeria</li>
           </div>
           <div class="item-option-sub">
-            <li ><label id="crear_album" style="color:blue; cursor: pointer;">Crear Albúm</label> /  <label id="crear_elemento_album" style="color:blue; cursor: pointer;">Crear elemento</label> </li>
+            <li ><label id="opcion7" style="color:blue; cursor: pointer;">Crear Albúm</label> /  <label id="opcion8" style="color:blue; cursor: pointer;">Crear elemento</label> </li>
           </div>
           <div class="item-option-sub">
-            <li id="ver-album">Ver album</li>
+           <li ><label id="opcion9" style="color:blue; cursor: pointer;">Ver Albúmnes</label> /  <label id="opcion10" style="color:blue; cursor: pointer;">Ver elementos</label> </li>
           </div>
         </div>
         <div class="option-cont">
@@ -55,10 +55,10 @@
             <li id="menu-blog">Modulo blog</li>
           </div>
           <div class="item-option-sub">
-            <li id="opcion7">Crear blog</li>
+            <li id="opcion11">Crear blog</li>
           </div>
           <div class="item-option-sub">
-            <li id="ver-blog">Ver blogs</li>
+            <li id="opcion12">Ver blogs</li>
           </div>
         </div>
         <div class="option-cont">
@@ -66,10 +66,10 @@
             <li id="menu-data">Modulo programas</li>
           </div>
           <div class="item-option-sub">
-            <li id="opcion5">Crear programa</li>
+            <li id="opcion13">Crear programa</li>
           </div>
           <div class="item-option-sub">
-            <li id="ver-programas">Ver Programas</li>
+            <li id="opcion14">Ver Programas</li>
           </div>
         </div>
         <div class="option-cont">
@@ -88,10 +88,10 @@
             <li  id="menu-multimedia">Modulo Talento humano</li>
           </div>
           <div class="item-option-sub">
-            <li id="crear-talento">Crear talento humano</li>
+            <li id="opcion17">Crear talento humano</li>
           </div>
           <div class="item-option-sub">
-            <li id="ver-talento">Ver talento </li>
+            <li id="opcion18">Ver talento </li>
           </div>
         </div>
       </div>

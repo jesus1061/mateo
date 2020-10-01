@@ -19,7 +19,7 @@ class Programas extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
+	public function inicio()
 	{
 		$this->load->view('crear_programa');
 	}
@@ -71,6 +71,18 @@ class Programas extends CI_Controller {
 		$peticion_select = $instancia -> editar_programa_datos($elemento , $titulo_programa , $contenido_programa , $portada_programa , $tipo_portada);
 		echo '<script>
 		alert("Programa editado con exito");
+		window.location.href = "listar_programas";
+		</script>';
+	}
+
+
+	public function eliminar_programa(){
+		print_r($_POST);
+		extract($_POST);
+		$instancia = new modelo_programa();
+		$peticion_delete = $instancia -> eliminar_elemento($archivo_id);
+			echo '<script>
+		alert("Programa eliminado con exito");
 		window.location.href = "listar_programas";
 		</script>';
 	}

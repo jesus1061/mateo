@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-10-2020 a las 19:10:39
+-- Tiempo de generación: 02-10-2020 a las 01:32:24
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.4.10
 
@@ -34,14 +34,6 @@ CREATE TABLE `albumnes` (
   `tipo_portada` varchar(2) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
---
--- Volcado de datos para la tabla `albumnes`
---
-
-INSERT INTO `albumnes` (`album_id`, `album_titulo`, `album_portada_principal`, `tipo_portada`) VALUES
-(1, 'Album 1 EDITADO', 'https://exitocol.vtexassets.com/assets/vtex.file-manager-graphql/images/1fb0e031-54e4-4318-839a-dd33656b8b29___a616a6b4f195d08518b5d97bc3e9d223.svg', 'ie'),
-(2, 'Album 1', 'plantilla_back/img/multimedia/logo.png', 'ii');
-
 -- --------------------------------------------------------
 
 --
@@ -54,14 +46,6 @@ CREATE TABLE `banners` (
   `banner_imagen` varchar(500) COLLATE utf8_spanish2_ci NOT NULL,
   `tipo_banner` varchar(2) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
-
---
--- Volcado de datos para la tabla `banners`
---
-
-INSERT INTO `banners` (`banner_id`, `banner_nombre`, `banner_imagen`, `tipo_banner`) VALUES
-(5, 'Banner modificado', 'https://exitocol.vtexassets.com/assets/vtex.file-manager-graphql/images/1fb0e031-54e4-4318-839a-dd33656b8b29___a616a6b4f195d08518b5d97bc3e9d223.svg', 'ie'),
-(7, 'Segundo banner', 'https://exitocol.vtexassets.com/assets/vtex.file-manager-graphql/images/1fb0e031-54e4-4318-839a-dd33656b8b29___a616a6b4f195d08518b5d97bc3e9d223.svg', 'ie');
 
 -- --------------------------------------------------------
 
@@ -79,14 +63,6 @@ CREATE TABLE `blog` (
   `tipo_portada` varchar(2) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
---
--- Volcado de datos para la tabla `blog`
---
-
-INSERT INTO `blog` (`blog_id`, `titulo_pub`, `contenido_pub`, `autor_pub`, `fecha_pub`, `portada_pub`, `tipo_portada`) VALUES
-(1, 'Publicacion 1', 'Contenido de la publicacion 1', 'Administrador', '2020-09-30 15:24:19', 'plantilla_back/img/multimedia/logo.png', 'ii'),
-(2, 'Publicacion 1 EDITADA', 'Publicacion 1 EDITADA', 'Administrador', '2020-10-01 14:33:38', 'plantilla_back/img/multimedia/logo.png', 'ii');
-
 -- --------------------------------------------------------
 
 --
@@ -100,14 +76,6 @@ CREATE TABLE `contenido_galeria` (
   `contenido_galeria_foto` varchar(500) COLLATE utf8_spanish2_ci NOT NULL,
   `tipo_portada` varchar(2) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
-
---
--- Volcado de datos para la tabla `contenido_galeria`
---
-
-INSERT INTO `contenido_galeria` (`contenido_galeria_id`, `contenido_galeria_nombre`, `album_id`, `contenido_galeria_foto`, `tipo_portada`) VALUES
-(1, 'Elemento galeria', 1, 'https://exitocol.vtexassets.com/assets/vtex.file-manager-graphql/images/1fb0e031-54e4-4318-839a-dd33656b8b29___a616a6b4f195d08518b5d97bc3e9d223.svg', 'ie'),
-(2, 'Elemento galeria editadorferfer', 1, 'plantilla_back/img/multimedia/logo.png', 'ii');
 
 -- --------------------------------------------------------
 
@@ -127,9 +95,9 @@ CREATE TABLE `multimedia` (
 --
 
 INSERT INTO `multimedia` (`id_archivo`, `nombre_archivo`, `tipo_archivo`, `archivo`) VALUES
-(40, 'Banner 1', 'ii', '<img src=\"../plantilla_back/img/multimedia/logo.png\" class=\"img-archivo\" id=\"ii\">'),
-(41, 'Imagen externa', 'ie', '<img src=\"https://exitocol.vtexassets.com/assets/vtex.file-manager-graphql/images/1fb0e031-54e4-4318-839a-dd33656b8b29___a616a6b4f195d08518b5d97bc3e9d223.svg\" class=\"img-archivo\" id=\"ie\">'),
-(42, 'Video externo', 've', '<iframe src=\"https://www.youtube.com/embed/CSslVENHKag\" class=\"img-archivo\" id=\"ve\"></iframe>');
+(43, 'Banner1', 'ii', '<img src=\"../plantilla_back/img/multimedia/banner.jpg\" class=\"img-archivo\" id=\"ii\">'),
+(44, 'Banne2', 'ii', '<img src=\"../plantilla_back/img/multimedia/redepyme.jpg\" class=\"img-archivo\" id=\"ii\">'),
+(45, 'Banner3', 'ie', '<img src=\"https://cdn.shortpixel.ai/client/q_glossy,ret_img/https://www.redepyme.co/inicio/wp-content/uploads/2020/03/3.jpg\" class=\"img-archivo\" id=\"ie\">');
 
 -- --------------------------------------------------------
 
@@ -149,14 +117,6 @@ CREATE TABLE `personal` (
   `tipo_portada` varchar(2) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
---
--- Volcado de datos para la tabla `personal`
---
-
-INSERT INTO `personal` (`personal_id`, `personal_nombre`, `personal_cargo`, `perfil_profesional`, `personal_foto`, `link_facebook`, `link_instagram`, `link_twitter`, `tipo_portada`) VALUES
-(1, 'Jesus david duran modificado', 'Coordinador tics modificado', 'Tecnólogo en análisis y desarrollo de sistemas de información modificado', 'plantilla_back/img/multimedia/logo.png', 'enlace facebook modificado', 'enlace facebook modificado', 'enlace facebook modificado', 'ii'),
-(2, 'Jesus david duran', 'Coordinador tics', 'Tecnólogo en análisis y desarrollo de sistemas de información', 'plantilla_back/img/multimedia/logo.png', 'enlace facebook', 'enlace facebook', 'enlace facebook', 'ii');
-
 -- --------------------------------------------------------
 
 --
@@ -170,15 +130,6 @@ CREATE TABLE `programas` (
   `portada_programa` varchar(500) COLLATE utf8_spanish2_ci NOT NULL,
   `tipo_portada` varchar(2) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
-
---
--- Volcado de datos para la tabla `programas`
---
-
-INSERT INTO `programas` (`programa_id`, `titulo_programa`, `contenido_programa`, `portada_programa`, `tipo_portada`) VALUES
-(1, 'Programa 1 modificado', 'Contenido del programa 1 modificado', 'plantilla_back/img/multimedia/logo.png', 'ii'),
-(2, 'Programa 1', 'Contenido del programa 1', 'https://exitocol.vtexassets.com/assets/vtex.file-manager-graphql/images/1fb0e031-54e4-4318-839a-dd33656b8b29___a616a6b4f195d08518b5d97bc3e9d223.svg', 'ie'),
-(3, 'Programa 2', 'Contenido del programa numero 2', 'plantilla_back/img/multimedia/logo.png', 'ii');
 
 -- --------------------------------------------------------
 
@@ -260,43 +211,43 @@ ALTER TABLE `usuarios_administradores`
 -- AUTO_INCREMENT de la tabla `albumnes`
 --
 ALTER TABLE `albumnes`
-  MODIFY `album_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `album_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `banners`
 --
 ALTER TABLE `banners`
-  MODIFY `banner_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `banner_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `blog`
 --
 ALTER TABLE `blog`
-  MODIFY `blog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `blog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `contenido_galeria`
 --
 ALTER TABLE `contenido_galeria`
-  MODIFY `contenido_galeria_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `contenido_galeria_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `multimedia`
 --
 ALTER TABLE `multimedia`
-  MODIFY `id_archivo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id_archivo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT de la tabla `personal`
 --
 ALTER TABLE `personal`
-  MODIFY `personal_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `personal_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `programas`
 --
 ALTER TABLE `programas`
-  MODIFY `programa_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `programa_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios_administradores`

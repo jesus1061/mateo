@@ -56,7 +56,7 @@ class Galeria_model{
 
 		$sql->bindParam(':album_portada_principal',$album_portada_principal);
 		$sql->bindParam(':tipo_portada',$tipo_portada);
-		echo $sql->execute();
+		$sql->execute();
 
 	}
 
@@ -94,7 +94,7 @@ class Galeria_model{
 	public function listar_elemento_galeria_unico_datos($elemento){
 		$instancia_conexion = new Conexion();
 		$pdo = $instancia_conexion -> obtener_conexion();
-		$sql = $pdo->prepare('SELECT * FROM contenido_galeria NATURAL JOIN albumnes WHERE contenido_galeria_id = :id');
+		$sql = $pdo->prepare('SELECT * FROM contenido_galeria  WHERE contenido_galeria_id = :id');
 		$sql->bindParam(':id', $elemento);
 		$sql->execute();
 		$resultado = $sql->fetchAll();
@@ -118,6 +118,41 @@ class Galeria_model{
 		$sql->bindParam(':tipo_portada',$tipo_portada);
 		echo $sql->execute();
 
+	}
+
+
+	public function eliminar_elemento_galeria($archivo_id){
+
+		$instancia_conexion = new Conexion();
+		$pdo = $instancia_conexion -> obtener_conexion();
+		$sql = $pdo->prepare('DELETE FROM contenido_galeria  WHERE contenido_galeria_id = :id');
+
+		$sql->bindParam(':id', $archivo_id);
+		$sql->execute();
+		
+
+	}
+
+
+	public function  eliminar_elementos_album($archivo_id){
+
+		$instancia_conexion = new Conexion();
+		$pdo = $instancia_conexion -> obtener_conexion();
+		$sql = $pdo->prepare('DELETE FROM contenido_galeria  WHERE album_id = :id');
+
+		$sql->bindParam(':id', $archivo_id);
+		$sql->execute();
+
+
+	}
+
+	public function eliminar_album($archivo_id){
+		$instancia_conexion = new Conexion();
+		$pdo = $instancia_conexion -> obtener_conexion();
+		$sql = $pdo->prepare('DELETE FROM albumnes  WHERE album_id = :id');
+
+		$sql->bindParam(':id', $archivo_id);
+		$sql->execute();
 	}
 
 

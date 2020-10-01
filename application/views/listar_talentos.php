@@ -14,8 +14,10 @@ $peticion_select = $instancia -> listar_personal();
   <link rel="stylesheet" href="../plantilla_back/css/personalizacion.css">
   
   <script type="text/javascript" src="../plantilla_back/js/jquery.js"></script>
-  <script src="../plantilla_back/js/mateo2.js"></script>
+  <script src="../plantilla_back/js/enrutador.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
 </head>
 <body>
   <div class="container">
@@ -71,7 +73,9 @@ $peticion_select = $instancia -> listar_personal();
 
     </div>
 
-
+<div class="confirmar_eliminar">
+  
+</div>
 
   </div>
 
@@ -94,11 +98,47 @@ $peticion_select = $instancia -> listar_personal();
       var id = $(this).attr("id");
      // alert(id);
 
-      $(".elemento").val(id);
+     $(".elemento").val(id);
 
-      $(".btn-editar-consulta").click();
+     $(".btn-editar-consulta").click();
 
 
+
+
+   });
+
+
+     $(".fa-trash").click(function(){
+      var id_archivo = $(this).attr("id");
+      alertify.confirm('Eliminar funcionario', '¿Deseas eliminar este funcionario?', function(){ alertify.success('Funcionario eliminado con exito');
+
+
+
+        $.ajax({
+                data:  { archivo_id:id_archivo}, //datos que se envian a traves de ajax
+                url:   'eliminar_talento', //archivo que recibe la peticion
+                type:  'post', //método de envio
+                beforeSend: function () {
+                  //$(".respuesta").html("Procesando, espere por favor...");
+                },
+                success:  function (response) { //una vez que el archivo recibe el request lo procesa y lo devuelve
+                $(".confirmar_eliminar").html(response);
+
+
+                  //$(".confirmar_eliminar").load("archivos_multimedia.php");
+                  //alert("Borrar");
+                }
+              });
+
+
+
+
+
+
+
+
+      }
+      , function(){ alertify.error('Cancel')});
 
 
     });

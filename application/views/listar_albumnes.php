@@ -15,8 +15,10 @@ $peticion_select = $instancia -> listar_albumnes();
   <link rel="stylesheet" href="../plantilla_back/css/personalizacion.css">
   
   <script type="text/javascript" src="../plantilla_back/js/jquery.js"></script>
-  <script src="../plantilla_back/js/mateo2.js"></script>
+  <script src="../plantilla_back/js/enrutador.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
 </head>
 <body>
   <div class="container">
@@ -52,7 +54,7 @@ $peticion_select = $instancia -> listar_albumnes();
               <div class="column-table-banner-encabezado encabezado-visible" style="font-weight: 900;"><label>Contenido</label></div>
               <div class="column-table-banner"><img id="'.$album['tipo_portada'].'" src="'.$album['album_portada_principal'].'" class="img-archivo"></div>
               <div class="column-table-banner-encabezado encabezado-visible" style="font-weight: 900;"><label>Opciones</label></div>
-              <div class="column-table-banner"><i class="fa fa-pencil btn-editar" id="'.$album['album_id'].'" style="color:orange; cursor:pointer; margin:auto;" id="btn-editar"></i><i class="fa fa-trash btn-eliminar-slider" id="'.$album['album_id'].'" style="color:red; cursor:pointer; margin:auto;"></i></div>
+              <div class="column-table-banner"><i class="fa fa-pencil btn-editar" id="'.$album['album_id'].'" style="color:orange; cursor:pointer; margin:auto;" id="btn-editar"></i><i class="fa fa-trash btn-eliminar" id="'.$album['album_id'].'" style="color:red; cursor:pointer; margin:auto;"></i></div>
               ';
             }
 
@@ -65,6 +67,12 @@ $peticion_select = $instancia -> listar_albumnes();
             <input type="hidden" name="elemento" class="elemento">
             <input type="submit" class="btn-editar-consulta">
           </form>
+
+
+
+
+
+
         </div>
 
 
@@ -72,7 +80,9 @@ $peticion_select = $instancia -> listar_albumnes();
 
     </div>
 
-
+<div class="confirmar_eliminar">
+  
+</div>
 
   </div>
 
@@ -100,6 +110,50 @@ $peticion_select = $instancia -> listar_albumnes();
 
 
     });
+
+
+     $(".fa-trash").click(function(){
+      var id_archivo = $(this).attr("id");
+     // alert(id_archivo);
+
+     alertify.confirm('Eliminar album', '¿Deseas eliminar este album tenga en cuenta que eliminara todos los elementos anclados a el?', function(){ alertify.success('Banner eliminado con exito');
+
+
+       $.ajax({
+                data:  { archivo_id:id_archivo}, //datos que se envian a traves de ajax
+                url:   'eliminar_album', //archivo que recibe la peticion
+                type:  'post', //método de envio
+                beforeSend: function () {
+                  //$(".respuesta").html("Procesando, espere por favor...");
+                },
+                success:  function (response) { //una vez que el archivo recibe el request lo procesa y lo devuelve
+                $(".confirmar_eliminar").html(response);
+
+
+                  //$(".confirmar_eliminar").load("archivos_multimedia.php");
+                  //alert("Borrar");
+                }
+              });
+
+
+
+
+
+
+
+
+
+
+
+
+     }
+     , function(){ alertify.error('Cancel')});
+
+
+   });
+
+
+     
 
 
    });

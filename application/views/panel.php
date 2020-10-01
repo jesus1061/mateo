@@ -14,7 +14,7 @@ $peticion_select = $instancia -> listar_archivos();
   <link rel="stylesheet" href="../plantilla_back/css/personalizacion.css">
   
   <script type="text/javascript" src="../plantilla_back/js/jquery.js"></script>
-  <script src="../plantilla_back/js/mateo2.js"></script>
+  <script src="../plantilla_back/js/enrutador.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
@@ -45,7 +45,7 @@ $peticion_select = $instancia -> listar_archivos();
 
           foreach($peticion_select as $archivo){
             echo "<div class='archivo'>
-            <div class='cont-archivo' id='".$archivo['id_archivo']."'>
+            <div class='cont-archivo' id='".$archivo['id_archivo']."' title='".$archivo['tipo_archivo']."'>
 
             ".$archivo['archivo']."
             <br>
@@ -85,6 +85,18 @@ $peticion_select = $instancia -> listar_archivos();
 
 <script>
   $(document).ready(function(){
+
+ /*   $(".img-archivo").each(function(){
+     var tipo_archivo = $(this).parent().attr("title");
+
+     if(tipo_archivo == 'ii'){
+      var ruta_sistema = $(this).attr("src");
+      ruta_visualizacion = ruta_sistema.slice(3);
+      $(this).attr("src",ruta_visualizacion);
+    }
+
+  });*/
+
 
     $(".fa-trash").click(function(){
       var id_archivo = $(this).attr("title");

@@ -11,10 +11,10 @@ $peticion_select = $instancia -> listar_archivos();
   <title>Mateo</title>
   <meta name="viewport" content="width=device-width, user-scalable=no">
   
-  <link rel="stylesheet" href="plantilla_back/css/personalizacion.css">
+  <link rel="stylesheet" href="../plantilla_back/css/personalizacion.css">
   
-  <script type="text/javascript" src="plantilla_back/js/jquery.js"></script>
-  <script src="plantilla_back/js/mateo2.js"></script>
+  <script type="text/javascript" src="../plantilla_back/js/jquery.js"></script>
+  <script src="../plantilla_back/js/enrutador.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -34,7 +34,7 @@ $peticion_select = $instancia -> listar_archivos();
       <div class="contenedor-ajustado">
        <div  id="formulario-blog">
 
-        <form action="programas/crear_programa" method="post" class="formulario">
+        <form action="crear_programa" method="post" class="formulario">
           <div class="encabezado-formulario">
            Creación de Programas
          </div>
@@ -136,7 +136,7 @@ $peticion_select = $instancia -> listar_archivos();
 
 
 
-       <center><input type="button" id="btn-activar-formulario" value="Crear Programa" style="display:block;"></center> 
+       <center><input type="button" id="btn-activar-formulario" value="Modificar Programa" style="display:block;"></center> 
      </form>
    </div>
 
@@ -159,10 +159,18 @@ $peticion_select = $instancia -> listar_archivos();
     $(".img-archivo").click(function(){
       var tipo_banner = $(this).attr("id");
       $(".tipo-banner").val(tipo_banner);
-      var ruta_seleccionada = $(this).attr("src");
-      $("#btn-abrir-multimedia").val(ruta_seleccionada);
-      validacion_programa = 1;
-    });
+      if(tipo_banner == "ii"){
+        var ruta_seleccionada = $(this).attr("src");
+        var ruta_convertida = ruta_seleccionada.slice(3);
+        $("#btn-abrir-multimedia").val(ruta_convertida);
+        validacion_programa = 1;
+      } else{
+       var ruta_seleccionada = $(this).attr("src");
+       $("#btn-abrir-multimedia").val(ruta_seleccionada);
+        validacion_programa = 1;
+     }
+
+   });
 
 
     $("#btn-activar-formulario").click(function(){
@@ -172,6 +180,18 @@ $peticion_select = $instancia -> listar_archivos();
         /*Fin de validación*/
         $("#btn-activar-formulario").attr("type","submit");
 
+      }
+    });
+
+
+     $(".img-archivo").each(function(){
+      var tipo_banner = $(this).attr("id");
+
+
+      if(tipo_banner == "ii"){
+        var ruta_sistema = $(this).attr("src");
+        var ruta_visualizacion = "../"+ruta_sistema;
+        $(this).attr("src",ruta_visualizacion);
       }
     });
   });

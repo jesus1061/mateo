@@ -19,7 +19,7 @@ class Talento extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
+	public function inicio()
 	{
 		$this->load->view('crear_talento');
 	}
@@ -31,7 +31,7 @@ class Talento extends CI_Controller {
 
 
 	public function crear_talento(){
-		print_r($_POST);
+		//print_r($_POST);
 		extract($_POST);
 		$instancia = new Personal_model();
 		$peticion_insert = $instancia -> crear_personal($personal_nombre , $personal_cargo , $perfil_profesional , $portada_foto , $link_facebook , $link_instagram , $link_twitter , $tipo_portada);
@@ -65,10 +65,28 @@ class Talento extends CI_Controller {
 
 	public function editar_talento_datos(){
 		extract($_POST);
-		print_r($_POST);
+		//print_r($_POST);
 		$instancia = new Personal_model();
 		$peticion_select = $instancia -> editar_talento_datos($personal_id , $personal_nombre , $personal_cargo , $perfil_profesional , $portada_foto , $link_facebook , $link_instagram , $link_twitter , $tipo_portada);
+		echo '<script>
+		alert("Funcionario editado corractameente");
+		window.location.href = "listar_talentos";
+		</script>';
 	}
+
+
+	public function eliminar_talento(){
+		extract($_POST);
+		//print_r($_POST);
+		$instancia = new Personal_model();
+		$peticion_delete = $instancia -> eliminar_elemento($archivo_id);
+		echo '<script>
+		alert("Funcionario eliminado corractameente");
+		window.location.href = "listar_talentos";
+		</script>';
+
+	}
+	
 
 	
 }

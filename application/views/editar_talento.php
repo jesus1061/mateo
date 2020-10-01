@@ -3,7 +3,7 @@ include_once "application/controllers/select_controller.php";
 $instancia = new Select_controller();
 $peticion_select = $instancia -> listar_archivos();
 extract($_POST);
-print_r($_POST);
+//print_r($_POST);
 $peticion_select_unico = $instancia -> listar_personal_unico($elemento);
 foreach($peticion_select_unico as $personal){
 
@@ -20,7 +20,7 @@ foreach($peticion_select_unico as $personal){
   <link rel="stylesheet" href="../plantilla_back/css/personalizacion.css">
   
   <script type="text/javascript" src="../plantilla_back/js/jquery.js"></script>
-  <script src="../plantilla_back/js/mateo2.js"></script>
+  <script src="../plantilla_back/js/enrutador.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -60,7 +60,7 @@ foreach($peticion_select_unico as $personal){
            <label for="" class="label-archivo campos-archivo" style="color:black; font-weight:900;">Nombre del Funcionario <span style="color:red; font-weight:900;">(Este campo es obligatorio que lo llenes)</span> </label>
            <br>
            <br>
-           <input type="text" class="input-form" name="personal_nombre"   placeholder="Nombre del funcionario" id="nombre_personal" value="<?php echo $personal['personal_nombre'] ?>">
+           <input type="text" class="input-form" name="personal_nombre"   placeholder="Nombre del funcionario" id="nombre_persona" value="<?php echo $personal['personal_nombre'] ?>">
 
 
          </div>
@@ -70,7 +70,7 @@ foreach($peticion_select_unico as $personal){
            <label for="" class="label-archivo campos-archivo" style="color:black; font-weight:900;">Cargo<span style="color:red; font-weight:900;">(Este campo es obligatorio que lo llenes)</span> </label>
            <br>
            <br>
-           <input type="text" class="input-form" name="personal_cargo"   placeholder="Cargo del funcionario" id="cargo_personal" value="<?php echo $personal['personal_cargo'] ?>">
+           <input type="text" class="input-form" name="personal_cargo"   placeholder="Cargo del funcionario" id="cargo_persona" value="<?php echo $personal['personal_cargo'] ?>">
 
 
          </div>
@@ -80,7 +80,7 @@ foreach($peticion_select_unico as $personal){
            <label for="" class="label-archivo campos-archivo" style="color:black; font-weight:900;">Perfil profesional <span style="color:red; font-weight:900;">(Este campo es obligatorio que lo llenes)</span> </label>
            <br>
            <br>
-           <input type="text" id="perfil_profesional" name="perfil_profesional" style="width: 92%; height: 100px; resize:none" placeholder="Perfil profesional" value="<?php echo $personal['perfil_profesional'] ?>">
+           <input type="text" id="perfil_profesiona" name="perfil_profesional" style="width: 92%; height: 100px; resize:none" placeholder="Perfil profesional" value="<?php echo $personal['perfil_profesional'] ?>">
 
 
          </div>
@@ -160,7 +160,7 @@ foreach($peticion_select_unico as $personal){
          <label for="" class="label-archivo campos-archivo" style="color:black; font-weight:900;">Link facebook<span style="color:red; font-weight:900;">(Este campo es obligatorio que lo llenes)</span> </label>
          <br>
          <br>
-         <input type="text" class="input-form" name="link_facebook"   placeholder="Link facebook" id="facebook" value="<?php echo $personal['link_facebook'] ?>">
+         <input type="text" class="input-form" name="link_facebook"   placeholder="Link facebook" id="faceboo" value="<?php echo $personal['link_facebook'] ?>">
 
 
        </div>
@@ -169,7 +169,7 @@ foreach($peticion_select_unico as $personal){
          <label for="" class="label-archivo campos-archivo" style="color:black; font-weight:900;">Link instagram<span style="color:red; font-weight:900;">(Este campo es obligatorio que lo llenes)</span> </label>
          <br>
          <br>
-         <input type="text" class="input-form" name="link_instagram"   placeholder="link instagram" id="instagram" value="<?php echo $personal['link_instagram'] ?>">
+         <input type="text" class="input-form" name="link_instagram"   placeholder="link instagram" id="instagra" value="<?php echo $personal['link_instagram'] ?>">
 
 
        </div>
@@ -178,7 +178,7 @@ foreach($peticion_select_unico as $personal){
          <label for="" class="label-archivo campos-archivo" style="color:black; font-weight:900;">Link twitter<span style="color:red; font-weight:900;">(Este campo es obligatorio que lo llenes)</span> </label>
          <br>
          <br>
-         <input type="text" class="input-form" name="link_twitter"   placeholder="Link twitter" id="twitter" value="<?php echo $personal['link_twitter'] ?>">
+         <input type="text" class="input-form" name="link_twitter"   placeholder="Link twitter" id="twitte" value="<?php echo $personal['link_twitter'] ?>">
 
 
        </div>
@@ -216,17 +216,18 @@ foreach($peticion_select_unico as $personal){
         var ruta_seleccionada = $(this).attr("src");
         var ruta_convertida = ruta_seleccionada.slice(3);
         $("#btn-abrir-multimedia").val(ruta_convertida);
-        validacion_banner = 1;
+        validacion_programa = 1;
       } else{
        var ruta_seleccionada = $(this).attr("src");
        $("#btn-abrir-multimedia").val(ruta_seleccionada);
+        validacion_programa = 1;
      }
 
    });
 
 
     $("#btn-activar-formulario").click(function(){
-      if($("#nombre_personal").val().length < 1  ||  $("#cargo_personal").val().length <  1 ||   $("#perfil_profesional").val().length <  1  ||   $("#facebook").val().length <  1 ||   $("#instagram").val().length <  1 ||   $("#twitter").val().length <  1 ){
+      if($("#nombre_persona").val().length < 1  ||  $("#cargo_persona").val().length <  1 ||   $("#perfil_profesiona").val().length <  1  ||   $("#faceboo").val().length <  1 ||   $("#instagra").val().length <  1 ||   $("#twitte").val().length <  1 ){
         alert("Por favor dilifenciar los datos correctamente");
       } else{
         /*Fin de validación*/

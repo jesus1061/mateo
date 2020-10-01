@@ -1,4 +1,16 @@
 *{font-family: 'Merriweather', serif;}
+
+#btn-activar-formulario
+{
+    background: black;
+    color:white;
+    font-style: oblique;
+    padding-top: 3px; padding-bottom: 3px; border:none;
+    cursor:pointer;
+}
+
+
+
 @media only screen and (max-width: 600px) {
 
 body{  overflow-x: hidden; margin: 0;background-image: url("../images/banner1.jpg"); background-size: 250%; background-repeat: no-repeat; background-attachment: fixed;}
@@ -7,7 +19,7 @@ input[type="submit"]{background-color:#0a8e5f; padding:10px; cursor: pointer; co
 form{-webkit-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
 	-moz-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
 	box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);}
-	.item-option{border: solid 0.5px white; background-color: #0a8e5f; color: white; font-weight: 900; padding-top: 10px; padding-bottom: 10px; display: block;}
+	.item-option{border: solid 0.5px white; background-color: black; color: white; font-weight: 900; padding-top: 10px; padding-bottom: 10px; display: block;}
 	.container{width: 100%; margin: auto; display: table;border: solid 0px black;}
 	header{width: 100%; float: left; display: table;background-color: white;-webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
 		-moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
@@ -26,9 +38,7 @@ form{-webkit-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
 		a{text-decoration: none;  }
 		li{list-style: none; padding-top: 5px; padding-bottom: 5px; font-size: 15px;}
 		.contenedor-dinamico-admin{width: 100%; display: table;padding-top: 0px; padding-bottom: 0px; margin: auto;}
-		.contenedor-ajustado{width: 100%;margin: auto; border: solid 1px white;  background-color: white; display:table; -webkit-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
-			-moz-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
-			box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75); padding-top: 0px; padding-bottom: 0px; margin-top: 10px;}
+		.contenedor-ajustado{width: 100%;margin: auto; border: solid 0px white;  background-color: white; display:table; ;border: solid 0px white; padding-top: 0px; padding-bottom: 0px; margin-top: 10px;}
 
 			.item-option-sub{color: black; padding-top: 5px; padding-bottom: 5px; display: block; color: black;}
 			.item-option-sub:hover{font-weight: 900; color: blue;}
@@ -39,13 +49,13 @@ form{-webkit-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
 				box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75); display: table; padding-top: 8px; padding-bottom: 8px;}
 				.archivo{width: 100%; float: left;  padding: 2px; box-sizing: border-box; text-align: center; margin-top: 8px; margin-bottom: 8px; }
 				.img-archivo{width: 75%; height: 120px; cursor: pointer;}
-				.encabezado-formulario{width: 100%; font-size: 20px; text-align: center; padding-top: 10px; padding-bottom: 10px; background-color: #a43474; color: white; font-weight: 900; font-style: oblique;}
+				.encabezado-formulario{width: 100%; font-size: 20px; text-align: center; padding-top: 10px; padding-bottom: 10px; background-color: black; color: white; font-weight: 900; font-style: oblique;}
 				.datos-archivo{display: block;}
 				.archivos-multimedia-container-subida{width: 100%; margin: auto;  padding-top: 5px; padding-bottom: 5px;}
 
 				.form-group{width: 90%; margin: auto; text-align: center; }
 				#subir-archivo-file{cursor: pointer; background-color: gray; border:none; color: white; text-align: center; font-weight: 900;}
-				#subir-archivo-file-btn , #subir-url-file-btn{cursor: pointer; background-color: #0a8e5f; border:none; color: white; text-align: center; font-weight: 900; width: 30%; }
+				#subir-archivo-file-btn , #subir-url-file-btn{cursor: pointer; background-color: black; border:none; color: white; text-align: center; font-weight: 900; width: 30%; }
 				#inputFileServer{display: none;}
 				.nombre_archivo{width: 100%; height: 25px;}
 				.nombre-archivo-label{font-weight: 900; font-style: oblique;}
@@ -98,12 +108,12 @@ form{-webkit-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
 					}
 
 				.contenedor-login{width: 95%; margin: auto; border:solid 1px black; margin-top: 5px;}
-				.encabezado-login{width:100%;padding-top: 10px; padding-bottom: 10px; text-align: center; display: table; font-weight: 900; font-size: 20px; background-color: #0a8e5f; color: white;}
+				.encabezado-login{width:100%;padding-top: 10px; padding-bottom: 10px; text-align: center; display: table; font-weight: 900; font-size: 20px; background-color: black; color: white;}
 				.contenedor-login-data{width: 100%; background-color: white; margin: auto; padding-top: 10px; padding-bottom: 10px;}
 				.contenedor-login-data .form-group{width:95%; margin: auto; padding-top: 20px; padding-bottom: 20px; text-align: center; font-weight: 900;}
 				.contenedor-login-data .form-group input{width: 85%; height: 30px; margin: auto;}
 				.data-login{display: block;}
-				#btn-login{width: 40%; background-color: #a43474;  font-size: 15px }
+				#btn-login{width: 40%; background-color: black;  font-size: 15px }
 				.encabezado-oculto{display:none;}
 				.encabezado-visible{display:block; padding-top: 15px;  padding-bottom: 15px; text-decoration:underline; text-align: center; }
 				.img-archivo{height: 200px;}
@@ -117,7 +127,7 @@ input[type="submit"]{background-color:#0a8e5f; padding:10px; cursor: pointer; co
 form{-webkit-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
 	-moz-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
 	box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);}
-	.item-option{border: solid 0.5px white; background-color: #0a8e5f; color: white; font-weight: 900;}
+	.item-option{border: solid 0.5px white; background-color: black; color: white; font-weight: 900;}
 	.container{width: 100%; margin: auto; display: table;border: solid 0px black;}
 	header{width: 100%; float: left; display: table;background-color: white;-webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75); 
 		-moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
@@ -136,9 +146,7 @@ form{-webkit-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
 		a{text-decoration: none;  }
 		li{list-style: none; padding-top: 5px; padding-bottom: 5px; font-size: 15px;}
 		.contenedor-dinamico-admin{width: 100%; display: table;padding-top: 20px; padding-bottom: 20px; margin: auto;}
-		.contenedor-ajustado{width: 95%;margin: auto; border: solid 1px white;  background-color: white; height: 100%; -webkit-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
-			-moz-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
-			box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75); padding-top: 20px; padding-bottom: 20px;}
+		.contenedor-ajustado{width: 95%;margin: auto; border: solid 0px white;  background-color: white; height: 100%; ;border: solid 0px white; padding-top: 20px; padding-bottom: 20px;}
 
 			.item-option-sub{color: black;}
 			.archivos-multimedia-container{width: 90%; margin: auto;  padding-top: 5px; padding-bottom: 5px;}
@@ -148,13 +156,13 @@ form{-webkit-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
 				box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75); display: table; padding-top: 8px; padding-bottom: 8px;}
 				.archivo{width: 25%; float: left;  padding: 2px; box-sizing: border-box; text-align: center; margin-top: 8px; margin-bottom: 8px; }
 				.img-archivo{width: 75%; height: 120px; cursor: pointer;}
-				.encabezado-formulario{width: 100%; font-size: 20px; text-align: center; padding-top: 10px; padding-bottom: 10px; background-color: #a43474; color: white; font-weight: 900; font-style: oblique;}
+				.encabezado-formulario{width: 100%; font-size: 20px; text-align: center; padding-top: 10px; padding-bottom: 10px; background-color: black; color: white; font-weight: 900; font-style: oblique;}
 				.datos-archivo{display: block;}
 				.archivos-multimedia-container-subida{width: 80%; margin: auto;  padding-top: 5px; padding-bottom: 5px;}
 
 				.form-group{width: 70%; margin: auto; text-align: center; }
 				#subir-archivo-file{cursor: pointer; background-color: gray; border:none; color: white; text-align: center; font-weight: 900;}
-				#subir-archivo-file-btn , #subir-url-file-btn{cursor: pointer; background-color: #0a8e5f; border:none; color: white; text-align: center; font-weight: 900; width: 20%; }
+				#subir-archivo-file-btn , #subir-url-file-btn{cursor: pointer; background-color: black; border:none; color: white; text-align: center; font-weight: 900; width: 20%; }
 				#inputFileServer{display: none;}
 				.nombre_archivo{width: 100%; height: 25px;}
 				.nombre-archivo-label{font-weight: 900; font-style: oblique;}
@@ -205,12 +213,12 @@ form{-webkit-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
 					}
 
 				.contenedor-login{width: 70%; margin: auto; border:solid 1px black; margin-top: 30px;}
-				.encabezado-login{width:100%;padding-top: 10px; padding-bottom: 10px; text-align: center; display: table; font-weight: 900; font-size: 20px; background-color: #0a8e5f; color: white;}
+				.encabezado-login{width:100%;padding-top: 10px; padding-bottom: 10px; text-align: center; display: table; font-weight: 900; font-size: 20px; background-color: black; color: white;}
 				.contenedor-login-data{width: 100%; background-color: white; margin: auto; padding-top: 10px; padding-bottom: 10px;}
 				.contenedor-login-data .form-group{width:90%; margin: auto; padding-top: 20px; padding-bottom: 20px; text-align: center; font-weight: 900;}
 				.contenedor-login-data .form-group input{width: 80%; height: 30px; margin: auto;}
 				.data-login{display: block;}
-				#btn-login{width: 25%; background-color: #a43474; padding-top: 5px; padding-bottom: 5px; }
+				#btn-login{width: 25%; background-color: black; padding-top: 5px; padding-bottom: 5px; }
 
 
 }
@@ -221,7 +229,7 @@ input[type="submit"]{background-color:#0a8e5f; padding:10px; cursor: pointer; co
 form{-webkit-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
 	-moz-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
 	box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);}
-	.item-option{border: solid 0.5px white; background-color: #0a8e5f; color: white; font-weight: 900;}
+	.item-option{border: solid 0.5px white; background-color: black; color: white; font-weight: 900;}
 	.container{width: 100%; margin: auto; display: table;border: solid 0px black;}
 	header{width: 100%; float: left; display: table;background-color: white;-webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75); 
 		-moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
@@ -240,9 +248,7 @@ form{-webkit-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
 		a{text-decoration: none;  }
 		li{list-style: none; padding-top: 5px; padding-bottom: 5px; font-size: 15px;}
 		.contenedor-dinamico-admin{width: 100%; display: table;padding-top: 20px; padding-bottom: 20px; margin: auto;}
-		.contenedor-ajustado{width: 95%;margin: auto; border: solid 1px white;  background-color: white; height: 100%; -webkit-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
-			-moz-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
-			box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75); padding-top: 20px; padding-bottom: 20px;}
+		.contenedor-ajustado{width: 95%;margin: auto; border: solid 0px white;  background-color: white; height: 100%; ;border: solid 0px white; padding-top: 20px; padding-bottom: 20px;}
 
 			.item-option-sub{color: black;}
 			.archivos-multimedia-container{width: 90%; margin: auto;  padding-top: 5px; padding-bottom: 5px;}
@@ -252,13 +258,13 @@ form{-webkit-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
 				box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75); display: table; padding-top: 8px; padding-bottom: 8px;}
 				.archivo{width: 25%; float: left;  padding: 2px; box-sizing: border-box; text-align: center; margin-top: 8px; margin-bottom: 8px; }
 				.img-archivo{width: 75%; height: 120px; cursor: pointer;}
-				.encabezado-formulario{width: 100%; font-size: 20px; text-align: center; padding-top: 10px; padding-bottom: 10px; background-color: #a43474; color: white; font-weight: 900; font-style: oblique;}
+				.encabezado-formulario{width: 100%; font-size: 20px; text-align: center; padding-top: 10px; padding-bottom: 10px; background-color: black; color: white; font-weight: 900; font-style: oblique;}
 				.datos-archivo{display: block;}
 				.archivos-multimedia-container-subida{width: 80%; margin: auto;  padding-top: 5px; padding-bottom: 5px;}
 
 				.form-group{width: 70%; margin: auto; text-align: center; }
 				#subir-archivo-file{cursor: pointer; background-color: gray; border:none; color: white; text-align: center; font-weight: 900;}
-				#subir-archivo-file-btn , #subir-url-file-btn{cursor: pointer; background-color: #0a8e5f; border:none; color: white; text-align: center; font-weight: 900; width: 20%; }
+				#subir-archivo-file-btn , #subir-url-file-btn{cursor: pointer; background-color: black; border:none; color: white; text-align: center; font-weight: 900; width: 20%; }
 				#inputFileServer{display: none;}
 				.nombre_archivo{width: 100%; height: 25px;}
 				.nombre-archivo-label{font-weight: 900; font-style: oblique;}
@@ -309,12 +315,12 @@ form{-webkit-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
 					}
 
 				.contenedor-login{width: 60%; margin: auto; border:solid 1px black; margin-top: 30px;}
-				.encabezado-login{width:100%;padding-top: 10px; padding-bottom: 10px; text-align: center; display: table; font-weight: 900; font-size: 20px; background-color: #0a8e5f; color: white;}
+				.encabezado-login{width:100%;padding-top: 10px; padding-bottom: 10px; text-align: center; display: table; font-weight: 900; font-size: 20px; background-color: black; color: white;}
 				.contenedor-login-data{width: 100%; background-color: white; margin: auto; padding-top: 10px; padding-bottom: 10px;}
 				.contenedor-login-data .form-group{width:90%; margin: auto; padding-top: 20px; padding-bottom: 20px; text-align: center; font-weight: 900;}
 				.contenedor-login-data .form-group input{width: 80%; height: 30px; margin: auto;}
 				.data-login{display: block;}
-				#btn-login{width: 25%; background-color: #a43474; padding-top: 5px; padding-bottom: 5px; }
+				#btn-login{width: 25%; background-color: black; padding-top: 5px; padding-bottom: 5px; }
 
 
 }
@@ -325,11 +331,11 @@ input[type="submit"]{background-color:#0a8e5f; padding:10px; cursor: pointer; co
 form{-webkit-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
 	-moz-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
 	box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);}
-	.item-option{border: solid 0.5px white; background-color: #0a8e5f; color: white; font-weight: 900;}
-	.container{width: 100%; margin: auto; display: table;border: solid 0px black;}
+	.item-option{border: solid 0.5px white; background-color: black; color: white; font-weight: 900;}
+	.container{width: 100%; margin: auto; display: table;}
 	header{width: 100%; float: left; display: table;background-color: white;-webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75); 
 		-moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
-		box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75); position: relative; z-index: 2; border: solid 0px green;display: table; padding-top: 0px; padding-bottom: 0px}
+		box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75); position: relative; z-index: 2; display: table; padding-top: 0px; padding-bottom: 0px}
 		.title-seccion-admin{width: 100%; text-align: center; padding-top:5px; padding-bottom: 5px; }
 		.archivos-subida{width: 80%; margin: auto;}
 		#formulario-blog , #formulario-archivos{width: 80%;  padding-top: 20px; padding-bottom: 20px; margin: auto;}
@@ -344,9 +350,7 @@ form{-webkit-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
 		a{text-decoration: none;  }
 		li{list-style: none; padding-top: 5px; padding-bottom: 5px; font-size: 15px;}
 		.contenedor-dinamico-admin{width: 100%; display: table;padding-top: 20px; padding-bottom: 20px; margin: auto;}
-		.contenedor-ajustado{width: 95%;margin: auto; border: solid 1px white;  background-color: white; height: 100%; -webkit-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
-			-moz-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
-			box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75); padding-top: 20px; padding-bottom: 20px;}
+		.contenedor-ajustado{width: 95%;margin: auto; border: solid 0px white;  background-color: white; height: 100%; ;border: solid 0px white; padding-top: 20px; padding-bottom: 20px;}
 
 			.item-option-sub{color: black;}
 			.archivos-multimedia-container{width: 90%; margin: auto;  padding-top: 5px; padding-bottom: 5px;}
@@ -356,13 +360,13 @@ form{-webkit-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
 				box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75); display: table; padding-top: 8px; padding-bottom: 8px;}
 				.archivo{width: 25%; float: left;  padding: 2px; box-sizing: border-box; text-align: center; margin-top: 8px; margin-bottom: 8px; }
 				.img-archivo{width: 75%; height: 120px; cursor: pointer;}
-				.encabezado-formulario{width: 100%; font-size: 20px; text-align: center; padding-top: 10px; padding-bottom: 10px; background-color: #a43474; color: white; font-weight: 900; font-style: oblique;}
+				.encabezado-formulario{width: 100%; font-size: 20px; text-align: center; padding-top: 10px; padding-bottom: 10px; background-color: black; color: white; font-weight: 900; font-style: oblique;}
 				.datos-archivo{display: block;}
 				.archivos-multimedia-container-subida{width: 80%; margin: auto;  padding-top: 5px; padding-bottom: 5px;}
 
 				.form-group{width: 70%; margin: auto; text-align: center; }
 				#subir-archivo-file{cursor: pointer; background-color: gray; border:none; color: white; text-align: center; font-weight: 900;}
-				#subir-archivo-file-btn , #subir-url-file-btn{cursor: pointer; background-color: #0a8e5f; border:none; color: white; text-align: center; font-weight: 900; width: 20%; }
+				#subir-archivo-file-btn , #subir-url-file-btn{cursor: pointer; background-color: black; border:none; color: white; text-align: center; font-weight: 900; width: 20%; }
 				#inputFileServer{display: none;}
 				.nombre_archivo{width: 100%; height: 25px;}
 				.nombre-archivo-label{font-weight: 900; font-style: oblique;}
@@ -413,31 +417,31 @@ form{-webkit-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
 					}
 
 				.contenedor-login{width: 45%; margin: auto; border:solid 1px black; margin-top: 30px;}
-				.encabezado-login{width:100%;padding-top: 10px; padding-bottom: 10px; text-align: center; display: table; font-weight: 900; font-size: 20px; background-color: #0a8e5f; color: white;}
+				.encabezado-login{width:100%;padding-top: 10px; padding-bottom: 10px; text-align: center; display: table; font-weight: 900; font-size: 20px; background-color: black; color: white;}
 				.contenedor-login-data{width: 100%; background-color: white; margin: auto; padding-top: 10px; padding-bottom: 10px;}
 				.contenedor-login-data .form-group{width:90%; margin: auto; padding-top: 20px; padding-bottom: 20px; text-align: center; font-weight: 900;}
 				.contenedor-login-data .form-group input{width: 80%; height: 30px; margin: auto;}
 				.data-login{display: block;}
-				#btn-login{width: 25%; background-color: #a43474; padding-top: 5px; padding-bottom: 5px; }
+				#btn-login{width: 25%; background-color: black; padding-top: 5px; padding-bottom: 5px; }
 
 
 }
 
 @media only screen and (min-width: 1200px) {body{color:black; font-style: oblique;}
-body{  overflow-x: hidden; margin: 0;background-image: url("../images/banner1.jpg"); background-size: 100%; background-repeat: no-repeat; background-attachment: fixed;}
+body{  overflow-x: hidden; margin: 0;background-image: url("../img/fondo.jpg"); background-size: 100%; background-repeat: no-repeat; background-attachment: fixed;}
 textarea{text-align: justify;}
 input[type="submit"]{background-color:#0a8e5f; padding:10px; cursor: pointer; color: white; font-weight: 900; border:none;}
 form{-webkit-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
 	-moz-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
 	box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);}
-	.item-option{border: solid 0.5px white; background-color: #0a8e5f; color: white; font-weight: 900;}
+	.item-option{border: solid 0.5px white; background-color: black; color: white; font-weight: 900;}
 	.container{width: 100%; margin: auto; display: table;border: solid 0px black;}
 	header{width: 100%; float: left; display: table;background-color: white;-webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75); 
 		-moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
 		box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75); position: relative; z-index: 2; border: solid 0px green;display: table; padding-top: 0px; padding-bottom: 0px}
 		.title-seccion-admin{width: 100%; text-align: center; padding-top:5px; padding-bottom: 5px; }
-		.archivos-subida{width: 80%; margin: auto;}
-		#formulario-blog , #formulario-archivos{width: 80%;  padding-top: 20px; padding-bottom: 20px; margin: auto;}
+		.archivos-subida{width: 80%; margin: auto;  background-color:white; }
+		#formulario-blog , #formulario-archivos{width: 80%;  padding-top: 20px; padding-bottom: 20px; margin: auto; }
 		.main{width: 100%; margin: auto;  display: table; padding-top: 0px; padding-bottom: 0px;}
 		.fa-navicon{color:#a43474; float: right; }
 		#btn-abrir-menu{font-size: 25px; cursor: pointer; display: none;}
@@ -449,25 +453,23 @@ form{-webkit-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
 		a{text-decoration: none;  }
 		li{list-style: none; padding-top: 5px; padding-bottom: 5px; font-size: 15px;}
 		.contenedor-dinamico-admin{width: 100%; display: table;padding-top: 20px; padding-bottom: 20px; margin: auto;}
-		.contenedor-ajustado{width: 95%;margin: auto; border: solid 1px white;  background-color: white; height: 100%; -webkit-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
-			-moz-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
-			box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75); padding-top: 20px; padding-bottom: 20px;}
+		.contenedor-ajustado{width: 95%;margin: auto; border: solid 0px white;  background: none; height: 100%; ;border: solid 0px white; padding-top: 20px; padding-bottom: 20px;}
 
 			.item-option-sub{color: black;}
 			.archivos-multimedia-container{width: 90%; margin: auto;  padding-top: 5px; padding-bottom: 5px;}
-			.archivos{width: 100%; margin: auto; display: table;}
+			.archivos{width: 100%; margin: auto; display: table; background-color: white;}
 			.cont-archivo{width: 99%; margin: auto;-webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
 				-moz-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
 				box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75); display: table; padding-top: 8px; padding-bottom: 8px;}
 				.archivo{width: 25%; float: left;  padding: 2px; box-sizing: border-box; text-align: center; margin-top: 8px; margin-bottom: 8px; }
 				.img-archivo{width: 75%; height: 120px; cursor: pointer;}
-				.encabezado-formulario{width: 100%; font-size: 20px; text-align: center; padding-top: 10px; padding-bottom: 10px; background-color: #a43474; color: white; font-weight: 900; font-style: oblique;}
+				.encabezado-formulario{width: 100%; font-size: 20px; text-align: center; padding-top: 10px; padding-bottom: 10px; background-color: black; color: white; font-weight: 900; font-style: oblique;}
 				.datos-archivo{display: block;}
 				.archivos-multimedia-container-subida{width: 80%; margin: auto;  padding-top: 5px; padding-bottom: 5px;}
 
 				.form-group{width: 70%; margin: auto; text-align: center; }
 				#subir-archivo-file{cursor: pointer; background-color: gray; border:none; color: white; text-align: center; font-weight: 900;}
-				#subir-archivo-file-btn , #subir-url-file-btn{cursor: pointer; background-color: #0a8e5f; border:none; color: white; text-align: center; font-weight: 900; width: 20%; }
+				#subir-archivo-file-btn , #subir-url-file-btn{cursor: pointer; background-color: black; border:none; color: white; text-align: center; font-weight: 900; width: 20%; }
 				#inputFileServer{display: none;}
 				.nombre_archivo{width: 100%; height: 25px;}
 				.nombre-archivo-label{font-weight: 900; font-style: oblique;}
@@ -482,7 +484,7 @@ form{-webkit-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
 
 				.formulario{width: 80%; margin: auto;  padding-top: 0px; padding-bottom: 20px; -webkit-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75);
 					-moz-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75);
-					box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75);}
+					box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75); background-color: white;}
 					.form-control{width: 90%; margin: auto;  padding-top: 20px; padding-bottom: 20px; text-align: center;}
 					.input-form , .input-textarea {width: 90%; height: 30px; border: solid 0.5px gray; padding-right: 10px; padding-left: 10px;}
 					.input-textarea{resize: none; min-height: 100px; }
@@ -492,7 +494,7 @@ form{-webkit-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
 					#select{width: 100%; height: 30px; cursor: pointer;}
 					#seleccionador_archivo{display: none;}
 					.contenedor-tabla{width: 90%; border: solid 1px black; margin: auto;}
-					.table{width: 100%;display: table;}
+					.table{width: 100%;display: table; background-color: white}
 					.column-table-archivo , .column-table-talento , .column-table-encabezado-pub{width: 25%; float: left; text-align: center; padding-top: 5px; padding-bottom: 5px; border: solid 0.5px gray; box-sizing: border-box;}
 
 					.column-table-banner{width: 33.333333%;float: left; display: flex; align-items: center;  padding-top: 5px; padding-bottom: 5px; padding-left: 10px; border: solid 0.5px gray; box-sizing: border-box; text-align: center; height: 80px;}
@@ -518,12 +520,12 @@ form{-webkit-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
 					}
 
 				.contenedor-login{width: 40%; margin: auto; border:solid 1px black; margin-top: 30px;}
-				.encabezado-login{width:100%;padding-top: 10px; padding-bottom: 10px; text-align: center; display: table; font-weight: 900; font-size: 20px; background-color: #0a8e5f; color: white;}
+				.encabezado-login{width:100%;padding-top: 10px; padding-bottom: 10px; text-align: center; display: table; font-weight: 900; font-size: 20px; background-color: black; color: white;}
 				.contenedor-login-data{width: 100%; background-color: white; margin: auto; padding-top: 10px; padding-bottom: 10px;}
 				.contenedor-login-data .form-group{width:90%; margin: auto; padding-top: 20px; padding-bottom: 20px; text-align: center; font-weight: 900;}
 				.contenedor-login-data .form-group input{width: 80%; height: 30px; margin: auto;}
 				.data-login{display: block;}
-				#btn-login{width: 25%; background-color: #a43474; padding-top: 5px; padding-bottom: 5px; }
+				#btn-login{width: 25%; background-color: black; padding-top: 5px; padding-bottom: 5px; }
 				.encabezado-oculto{display:block;}
 				.encabezado-visible{display:none;}
 				

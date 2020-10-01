@@ -67,22 +67,35 @@ class Personal_model{
 		$pdo = $instancia_conexion -> obtener_conexion();
 
 		$sql = $pdo->prepare('UPDATE personal SET personal_nombre= :personal_nombre , personal_cargo= :personal_cargo ,  perfil_profesional = :perfil_profesional , personal_foto = :personal_foto ,  link_facebook = :link_facebook , link_instagram = :link_instagram , link_twitter = :link_twitter , tipo_portada= :tipo_portada   WHERE personal_id = :id');
-			
-
-			$sql->bindParam(':id',$personal_id);
-
-			$sql->bindParam(':personal_nombre', $personal_nombre);
-			$sql->bindParam(':personal_cargo', $personal_cargo);
 
 
-			$sql->bindParam(':perfil_profesional',$perfil_profesional);
-			$sql->bindParam(':personal_foto',$portada_foto);
-			
-			$sql->bindParam(':link_facebook',$link_facebook);
-			$sql->bindParam(':link_instagram',$link_instagram);
-			$sql->bindParam(':link_twitter',$link_twitter);
-			$sql->bindParam(':tipo_portada',$tipo_portada);
-			$sql->execute();
+		$sql->bindParam(':id',$personal_id);
+
+		$sql->bindParam(':personal_nombre', $personal_nombre);
+		$sql->bindParam(':personal_cargo', $personal_cargo);
+
+
+		$sql->bindParam(':perfil_profesional',$perfil_profesional);
+		$sql->bindParam(':personal_foto',$portada_foto);
+
+		$sql->bindParam(':link_facebook',$link_facebook);
+		$sql->bindParam(':link_instagram',$link_instagram);
+		$sql->bindParam(':link_twitter',$link_twitter);
+		$sql->bindParam(':tipo_portada',$tipo_portada);
+		$sql->execute();
+
+	}
+
+
+	public function eliminar_elemento($archivo_id){
+		$instancia_conexion = new Conexion();
+		$pdo = $instancia_conexion -> obtener_conexion();
+
+		$sql = $pdo->prepare('DELETE FROM personal  WHERE personal_id = :id');
+
+		$sql->bindParam(':id', $archivo_id);
+		
+		$sql->execute();
 
 	}
 

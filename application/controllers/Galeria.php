@@ -64,10 +64,14 @@ class Galeria extends CI_Controller {
 
 	public function editar_album_datos(){
 		extract($_POST);
-		print_r($_POST);
+		//print_r($_POST);
 		$instancia = new Galeria_model();
 		$peticion_update = $instancia -> editar_album_unico_datos($album_id , $album_titulo , $album_portada_principal , $tipo_portada);
-		return $peticion_update;
+		
+		echo '<script>
+		alert("Album modificado correctamente");
+		window.location.href = "listar_albumnes";
+		</script>';
 
 	}
 
@@ -124,6 +128,42 @@ class Galeria extends CI_Controller {
 		alert("Elemento de galeria modificado correctamente");
 		window.location.href = "ver_elementos_galeria";
 		</script>';
+	}
+
+
+	public function eliminar_elemento_galeria(){
+		extract($_POST);
+		//print_r($_POST);
+		$instancia = new Galeria_model();
+		$peticion_delete = $instancia -> eliminar_elemento_galeria($archivo_id);
+		echo '<script>
+		alert("Se ha eliminado este elemento");
+		window.location.href = "ver_elementos_galeria";
+		
+		</script>';
+		
+		
+	}
+
+	public function eliminar_album(){
+		extract($_POST);
+		print_r($_POST);
+		$instancia = new Galeria_model();
+		/*Archivo id es el codigo del album primero se eliminaran los elementos que corresponden con ese id luego se eliminara el registro del album*/
+		$peticion_delete_elementos = $instancia -> eliminar_elementos_album($archivo_id);
+		echo '<script>
+		alert("Se han eliminado los elementos de este album");
+		
+		</script>';
+
+		$peticion_delete_album = $instancia -> eliminar_album($archivo_id);
+
+		echo '<script>
+		alert("Se han eliminado este album y todos sus registros");
+		window.location.href = "ver_elementos_galeria";
+		
+		</script>';
+
 	}
 
 	

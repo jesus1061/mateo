@@ -69,6 +69,17 @@ class Blog_model{
 	}
 
 
+	public function eliminar_elemento($archivo_id){
+		$instancia_conexion = new Conexion();
+		$pdo = $instancia_conexion -> obtener_conexion();
+		$sql = $pdo->prepare('DELETE FROM blog  WHERE blog_id = :id');
+
+		$sql->bindParam(':id', $archivo_id);
+		$sql->execute();
+
+	}
+
+
 	
 
 

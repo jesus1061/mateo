@@ -2,7 +2,7 @@
 include_once "application/controllers/select_controller.php";
 $instancia = new Select_controller();
 $peticion_select = $instancia -> listar_archivos();
-print_r($_POST);
+//print_r($_POST);
 extract($_POST);
 $peticion_select_unico = $instancia -> consultar_programa_unico($elemento);
 foreach($peticion_select_unico as $programa){
@@ -19,7 +19,7 @@ foreach($peticion_select_unico as $programa){
   <link rel="stylesheet" href="../plantilla_back/css/personalizacion.css">
   
   <script type="text/javascript" src="../plantilla_back/js/jquery.js"></script>
-  <script src="../plantilla_back/js/mateo2.js"></script>
+  <script src="../plantilla_back/js/enrutador.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -41,7 +41,7 @@ foreach($peticion_select_unico as $programa){
 
         <form action="editar_programa_datos" method="post" class="formulario">
           <div class="encabezado-formulario">
-           Creación de Programas
+           Modificar Programa
          </div>
 
 
@@ -59,7 +59,7 @@ foreach($peticion_select_unico as $programa){
            <label for="" class="label-archivo campos-archivo" style="color:black; font-weight:900;">Nombre del programa <span style="color:red; font-weight:900;">(Este campo es obligatorio que lo llenes)</span> </label>
            <br>
            <br>
-           <input type="text" class="input-form" name="titulo_programa"   placeholder="Nombre del programa" id="nombre_programa" value="<?php echo $programa['titulo_programa'] ?>">
+           <input type="text" class="input-form" name="titulo_programa"   placeholder="Nombre del programa" id="nombre" value="<?php echo $programa['titulo_programa'] ?>">
 
 
          </div>
@@ -69,7 +69,7 @@ foreach($peticion_select_unico as $programa){
            <label for="" class="label-archivo campos-archivo" style="color:black; font-weight:900;">Contenido del programa <span style="color:red; font-weight:900;">(Este campo es obligatorio que lo llenes)</span> </label>
            <br>
            <br>
-           <input type="text" id="contenido_programa" value="<?php echo $programa['contenido_programa']; ?>" name="contenido_programa" style="width: 92%; height: 100px; resize:none">
+           <input type="text" id="contenido" value="<?php echo $programa['contenido_programa']; ?>" name="contenido_programa" style="width: 92%; height: 100px; resize:none">
 
 
          </div>
@@ -151,7 +151,7 @@ foreach($peticion_select_unico as $programa){
 
 
 
-       <center><input type="button" id="btn-activar-formulario" value="Crear Programa" style="display:block;"></center> 
+       <center><input type="button" id="btn-activar-formulario" value="Editar Programa" style="display:block;"></center> 
      </form>
    </div>
 
@@ -183,24 +183,25 @@ foreach($peticion_select_unico as $programa){
       }
     });
 
-  $(".img-archivo").click(function(){
+    $(".img-archivo").click(function(){
       var tipo_banner = $(this).attr("id");
       $(".tipo-banner").val(tipo_banner);
       if(tipo_banner == "ii"){
         var ruta_seleccionada = $(this).attr("src");
         var ruta_convertida = ruta_seleccionada.slice(3);
         $("#btn-abrir-multimedia").val(ruta_convertida);
-        validacion_banner = 1;
+        validacion_programa = 1;
       } else{
        var ruta_seleccionada = $(this).attr("src");
        $("#btn-abrir-multimedia").val(ruta_seleccionada);
+       validacion_programa = 1;
      }
 
    });
 
 
     $("#btn-activar-formulario").click(function(){
-      if($("#nombre_programa").val().length < 1  ||  $("#contenido_programa").val().length <  1){
+      if($("#nombre").val().length < 1  ||  $("#contenido").val().length <  1){
         alert("Por favor dilifenciar los datos correctamente");
       } else{
         /*Fin de validación*/
@@ -208,6 +209,8 @@ foreach($peticion_select_unico as $programa){
 
       }
     });
+
+
   });
 </script>
 

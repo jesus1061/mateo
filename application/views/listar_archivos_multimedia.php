@@ -14,7 +14,7 @@ $peticion_select = $instancia -> listar_archivos();
   <link rel="stylesheet" href="../plantilla_back/css/personalizacion.css">
   
   <script type="text/javascript" src="../plantilla_back/js/jquery.js"></script>
-  <script src="../plantilla_back/js/mateo2.js"></script>
+  <script src="../plantilla_back/js/enrutador.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
@@ -94,7 +94,7 @@ $peticion_select = $instancia -> listar_archivos();
 
         $.ajax({
                 data:  { archivo_id:id_archivo}, //datos que se envian a traves de ajax
-                url:   'eliminar_archivo', //archivo que recibe la peticion
+                url:   'eliminar_banner', //archivo que recibe la peticion
                 type:  'post', //método de envio
                 beforeSend: function () {
                   //$(".respuesta").html("Procesando, espere por favor...");

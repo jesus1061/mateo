@@ -50,6 +50,24 @@ class Banner extends CI_Controller {
 		return $peticion_select;
 	}
 
+	public function editar_banner(){
+		$this->load->view('editar_banner');
+	}
+
+
+	public function editar_banner_datos(){
+		print_r($_POST);
+		extract($_POST);
+		$instancia = new Banner_model();
+		$peticion_update = $instancia -> editar_banner_datos($banner_id , $banner_nombre , $banner_imagen , $tipo_banner);
+	}
+
+	public function consultar_banner_unico($elemento){
+		$instancia = new Banner_model();
+		$peticion_select = $instancia -> consultar_banner_unico($elemento);
+		return $peticion_select;
+	}
+
 	
 }
 

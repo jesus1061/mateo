@@ -27,5 +27,35 @@ class Banner_model{
 	}
 
 
+	public function consultar_banner_unico($elemento){
+
+		$instancia_conexion = new Conexion();
+		$pdo = $instancia_conexion -> obtener_conexion();
+		$sql = $pdo->prepare('SELECT * FROM banners  WHERE banner_id = :id');
+		$sql->bindParam(':id', $elemento);
+		$sql->execute();
+		$resultado = $sql->fetchAll();
+		return $resultado;
+
+	}
+
+
+	public function editar_banner_datos($banner_id ,$banner_nombre , $banner_imagen , $tipo_banner){
+		$instancia_conexion = new Conexion();
+		$pdo = $instancia_conexion -> obtener_conexion();
+		$sql = $pdo->prepare('UPDATE banners SET banner_nombre= :nombre_banner , banner_imagen= :banner , tipo_banner= :tipo_banner  WHERE banner_id = :id');
+
+
+		$sql->bindParam(':id',$banner_id);
+
+		$sql->bindParam(':nombre_banner', $banner_nombre);
+
+
+		$sql->bindParam(':banner',$banner_imagen);
+		$sql->bindParam(':tipo_banner',$tipo_banner);
+		$sql->execute();
+	}
+
+
 }
 ?>

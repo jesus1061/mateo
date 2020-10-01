@@ -51,7 +51,7 @@ $peticion_select = $instancia -> listar_banners();
               <div class="column-table-banner-encabezado encabezado-visible" style="font-weight: 900;"><label>Contenido</label></div>
               <div class="column-table-banner"><img id="'.$banner['tipo_banner'].'" src="'.$banner['banner_imagen'].'" class="img-archivo"></div>
               <div class="column-table-banner-encabezado encabezado-visible" style="font-weight: 900;"><label>Opciones</label></div>
-              <div class="column-table-banner"><i class="fa fa-pencil btn-editar-slider" id="'.$banner['banner_id'].'" style="color:orange; cursor:pointer; margin:auto;" id="btn-editar-slider"></i><i class="fa fa-trash btn-eliminar-slider" id="'.$banner['banner_id'].'" style="color:red; cursor:pointer; margin:auto;"></i></div>
+              <div class="column-table-banner"><i class="fa fa-pencil btn-editar" id="'.$banner['banner_id'].'" style="color:orange; cursor:pointer; margin:auto;" id="btn-editar"></i><i class="fa fa-trash btn-eliminar-slider" id="'.$banner['banner_id'].'" style="color:red; cursor:pointer; margin:auto;"></i></div>
               ';
             }
 
@@ -60,9 +60,9 @@ $peticion_select = $instancia -> listar_banners();
 
           </div>
 
-          <form action="editar_slider.php" method="post" style="display: none;">
-            <input type="hidden" name="banner_id" class="codigo_banner">
-            <input type="submit" class="btn-editar_slider">
+          <form action="editar_banner" method="post" style="display: none;">
+            <input type="hidden" name="elemento" class="elemento">
+            <input type="submit" class="btn-editar-consulta">
           </form>
         </div>
 
@@ -87,6 +87,17 @@ $peticion_select = $instancia -> listar_banners();
         var ruta_visualizacion = "../"+ruta_sistema;
         $(this).attr("src",ruta_visualizacion);
       }
+    });
+
+
+     $(".btn-editar").click(function(){
+      var id = $(this).attr("id");
+      $(".elemento").val(id);
+      $(".btn-editar-consulta").click();
+      
+
+
+
     });
 
 

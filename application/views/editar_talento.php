@@ -2,6 +2,12 @@
 include_once "application/controllers/select_controller.php";
 $instancia = new Select_controller();
 $peticion_select = $instancia -> listar_archivos();
+extract($_POST);
+print_r($_POST);
+$peticion_select_unico = $instancia -> listar_personal_unico($elemento);
+foreach($peticion_select_unico as $personal){
+
+}
 
 ?>
 <!DOCTYPE html>
@@ -11,10 +17,10 @@ $peticion_select = $instancia -> listar_archivos();
   <title>Mateo</title>
   <meta name="viewport" content="width=device-width, user-scalable=no">
   
-  <link rel="stylesheet" href="plantilla_back/css/personalizacion.css">
+  <link rel="stylesheet" href="../plantilla_back/css/personalizacion.css">
   
-  <script type="text/javascript" src="plantilla_back/js/jquery.js"></script>
-  <script src="plantilla_back/js/mateo2.js"></script>
+  <script type="text/javascript" src="../plantilla_back/js/jquery.js"></script>
+  <script src="../plantilla_back/js/mateo2.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -34,9 +40,19 @@ $peticion_select = $instancia -> listar_archivos();
       <div class="contenedor-ajustado">
        <div  id="formulario-blog">
 
-        <form action="talento/crear_talento" method="post" class="formulario">
+        <form action="editar_talento_datos" method="post" class="formulario">
           <div class="encabezado-formulario">
            Creación de Funcionarios
+         </div>
+
+
+         <div class="form-control">
+           <label for="" class="label-archivo campos-archivo" style="color:black; font-weight:900;">Codigo del funcionario </label>
+           <br>
+           <br>
+           <input type="text" class="input-form" name="personal_id"   placeholder="Nombre del funcionario" id="nombre_personal" value="<?php echo $personal['personal_id'] ?>" readonly>
+
+
          </div>
          
 
@@ -44,7 +60,7 @@ $peticion_select = $instancia -> listar_archivos();
            <label for="" class="label-archivo campos-archivo" style="color:black; font-weight:900;">Nombre del Funcionario <span style="color:red; font-weight:900;">(Este campo es obligatorio que lo llenes)</span> </label>
            <br>
            <br>
-           <input type="text" class="input-form" name="personal_nombre"   placeholder="Nombre del funcionario" id="nombre_personal">
+           <input type="text" class="input-form" name="personal_nombre"   placeholder="Nombre del funcionario" id="nombre_personal" value="<?php echo $personal['personal_nombre'] ?>">
 
 
          </div>
@@ -54,7 +70,7 @@ $peticion_select = $instancia -> listar_archivos();
            <label for="" class="label-archivo campos-archivo" style="color:black; font-weight:900;">Cargo<span style="color:red; font-weight:900;">(Este campo es obligatorio que lo llenes)</span> </label>
            <br>
            <br>
-           <input type="text" class="input-form" name="personal_cargo"   placeholder="Cargo del funcionario" id="cargo_personal">
+           <input type="text" class="input-form" name="personal_cargo"   placeholder="Cargo del funcionario" id="cargo_personal" value="<?php echo $personal['personal_cargo'] ?>">
 
 
          </div>
@@ -64,7 +80,7 @@ $peticion_select = $instancia -> listar_archivos();
            <label for="" class="label-archivo campos-archivo" style="color:black; font-weight:900;">Perfil profesional <span style="color:red; font-weight:900;">(Este campo es obligatorio que lo llenes)</span> </label>
            <br>
            <br>
-           <textarea id="perfil_profesional" name="perfil_profesional" style="width: 92%; height: 100px; resize:none" placeholder="Perfil profesional"></textarea>
+           <input type="text" id="perfil_profesional" name="perfil_profesional" style="width: 92%; height: 100px; resize:none" placeholder="Perfil profesional" value="<?php echo $personal['perfil_profesional'] ?>">
 
 
          </div>
@@ -78,7 +94,7 @@ $peticion_select = $instancia -> listar_archivos();
           <label for="" class="label-form">Cargar Foto del perfil</label>
           <br>
           <br>
-          <input type="text" id="btn-abrir-multimedia" name="portada_foto"  placeholder="Seleccionar archivo multimedia" class="input-form"  style="background-color: gray; color: white; font-weight: 900; cursor: pointer" readonly>
+          <input type="text" id="btn-abrir-multimedia" name="portada_foto"  placeholder="Seleccionar archivo multimedia" class="input-form"  style="background-color: gray; color: white; font-weight: 900; cursor: pointer" readonly value="<?php echo $personal['personal_foto'] ?>">
 
           <div class="container-imagenes" style="display:none;">
            <div class="archivos" style="display:table;">
@@ -144,7 +160,7 @@ $peticion_select = $instancia -> listar_archivos();
          <label for="" class="label-archivo campos-archivo" style="color:black; font-weight:900;">Link facebook<span style="color:red; font-weight:900;">(Este campo es obligatorio que lo llenes)</span> </label>
          <br>
          <br>
-         <input type="text" class="input-form" name="link_facebook"   placeholder="Link facebook" id="facebook">
+         <input type="text" class="input-form" name="link_facebook"   placeholder="Link facebook" id="facebook" value="<?php echo $personal['link_facebook'] ?>">
 
 
        </div>
@@ -153,7 +169,7 @@ $peticion_select = $instancia -> listar_archivos();
          <label for="" class="label-archivo campos-archivo" style="color:black; font-weight:900;">Link instagram<span style="color:red; font-weight:900;">(Este campo es obligatorio que lo llenes)</span> </label>
          <br>
          <br>
-         <input type="text" class="input-form" name="link_instagram"   placeholder="link instagram" id="instagram">
+         <input type="text" class="input-form" name="link_instagram"   placeholder="link instagram" id="instagram" value="<?php echo $personal['link_instagram'] ?>">
 
 
        </div>
@@ -162,18 +178,18 @@ $peticion_select = $instancia -> listar_archivos();
          <label for="" class="label-archivo campos-archivo" style="color:black; font-weight:900;">Link twitter<span style="color:red; font-weight:900;">(Este campo es obligatorio que lo llenes)</span> </label>
          <br>
          <br>
-         <input type="text" class="input-form" name="link_twitter"   placeholder="Link twitter" id="twitter">
+         <input type="text" class="input-form" name="link_twitter"   placeholder="Link twitter" id="twitter" value="<?php echo $personal['link_twitter'] ?>">
 
 
        </div>
 
-       <input type="hidden" class="tipo-banner" name="tipo_portada" >
+       <input type="hidden" class="tipo-banner" name="tipo_portada" value="<?php echo $personal['tipo_portada'] ?>" >
 
 
 
 
 
-       <center><input type="button" id="btn-activar-formulario" value="Crear Funcionario" style="display:block;"></center> 
+       <center><input type="button" id="btn-activar-formulario" value="Editar Funcionario" style="display:block;"></center> 
      </form>
    </div>
 
@@ -196,14 +212,21 @@ $peticion_select = $instancia -> listar_archivos();
     $(".img-archivo").click(function(){
       var tipo_banner = $(this).attr("id");
       $(".tipo-banner").val(tipo_banner);
-      var ruta_seleccionada = $(this).attr("src");
-      $("#btn-abrir-multimedia").val(ruta_seleccionada);
-      validacion_programa = 1;
-    });
+      if(tipo_banner == "ii"){
+        var ruta_seleccionada = $(this).attr("src");
+        var ruta_convertida = ruta_seleccionada.slice(3);
+        $("#btn-abrir-multimedia").val(ruta_convertida);
+        validacion_banner = 1;
+      } else{
+       var ruta_seleccionada = $(this).attr("src");
+       $("#btn-abrir-multimedia").val(ruta_seleccionada);
+     }
+
+   });
 
 
     $("#btn-activar-formulario").click(function(){
-      if($("#nombre_personal").val().length < 1  ||  $("#cargo_personal").val().length <  1 ||   $("#perfil_profesional").val().length <  1  ||   $("#facebook").val().length <  1 ||   $("#instagram").val().length <  1 ||   $("#twitter").val().length <  1  || validacion_programa == 0 ){
+      if($("#nombre_personal").val().length < 1  ||  $("#cargo_personal").val().length <  1 ||   $("#perfil_profesional").val().length <  1  ||   $("#facebook").val().length <  1 ||   $("#instagram").val().length <  1 ||   $("#twitter").val().length <  1 ){
         alert("Por favor dilifenciar los datos correctamente");
       } else{
         /*Fin de validación*/
@@ -211,6 +234,21 @@ $peticion_select = $instancia -> listar_archivos();
 
       }
     });
+
+
+
+    $(".img-archivo").each(function(){
+      var tipo_banner = $(this).attr("id");
+
+
+      if(tipo_banner == "ii"){
+        var ruta_sistema = $(this).attr("src");
+        var ruta_visualizacion = "../"+ruta_sistema;
+        $(this).attr("src",ruta_visualizacion);
+      }
+    });
+
+
   });
 </script>
 

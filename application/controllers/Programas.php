@@ -49,5 +49,30 @@ class Programas extends CI_Controller {
 		$peticion_select = $instancia -> consultar_programas();
 		return $peticion_select;
 	}
+
+
+	public function editar_programa(){
+		$this->load->view('editar_programa');
+
+	}
+
+
+	public function consultar_programa_unico($elemento){
+		$instancia = new modelo_programa();
+		$peticion_select = $instancia -> consultar_programa_unico($elemento);
+		return $peticion_select;
+	}
+
+
+	public function editar_programa_datos(){
+		//print_r($_POST);
+		extract($_POST);
+		$instancia = new modelo_programa();
+		$peticion_select = $instancia -> editar_programa_datos($elemento , $titulo_programa , $contenido_programa , $portada_programa , $tipo_portada);
+		echo '<script>
+		alert("Programa editado con exito");
+		window.location.href = "listar_programas";
+		</script>';
+	}
 	
 }

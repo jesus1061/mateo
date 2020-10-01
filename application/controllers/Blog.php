@@ -1,4 +1,5 @@
 <?php
+include_once "application/models/blog_model.php";
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Blog extends CI_Controller {
@@ -26,6 +27,26 @@ class Blog extends CI_Controller {
 	public function listar_blogs()
 	{
 		$this->load->view('listar_blogs');
+	}
+
+
+	public function crear_blog(){
+		//print_r($_POST);
+		extract($_POST);
+		$instancia = new Blog_model();
+		$peticion_insert = $instancia -> crear_publicacion($titulo_pub , $contenido_pub , $autor_pub , $portada_pub , $tipo_portada);
+
+		echo '<script>
+		alert("Publicación creada con exito");
+		window.location.href = "listar_blogs";
+		</script>';
+	}
+
+
+	public function consultar_publicaciones(){
+		$instancia = new Blog_model();
+		$peticion_select = $instancia -> consultar_publicaciones();
+		return $peticion_select;
 	}
 
 	

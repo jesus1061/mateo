@@ -53,11 +53,15 @@ $peticion_select = $instancia -> listar_programas();
             <div class="column-table-programa-encabezado encabezado-visible" style="font-weight: 900;">Portada del programa</div>
             <div class="column-table-programa-contenido"><img id="'.$programa['tipo_portada'].'" src="'.$programa['portada_programa'].'" class="img-archivo"></div>
             <div class="column-table-programa-encabezado encabezado-visible" style="font-weight: 900;">Opciones</div>
-            <div class="column-table-programa-contenido"><i class="fa fa-pencil btn-editar-programa" id="'.$programa['programa_id'].'" style="margin:auto; color:orange; cursor:pointer;"></i><i class="fa fa-trash btn-eliminar-programa" id="'.$programa['programa_id'].'" style="margin:auto; color:red; cursor:pointer;"></i></div>';
+            <div class="column-table-programa-contenido"><i class="fa fa-pencil btn-editar" id="'.$programa['programa_id'].'" style="margin:auto; color:orange; cursor:pointer;"></i><i class="fa fa-trash btn-eliminar-programa" id="'.$programa['programa_id'].'" style="margin:auto; color:red; cursor:pointer;"></i></div>';
           }
           ?>
 
         </div>
+        <form action="editar_programa" method="post" style="display: none;">
+          <input type="hidden" name="elemento" class="elemento">
+          <input type="submit" class="btn-editar-consulta">
+        </form>
       </div>
 
 
@@ -82,6 +86,19 @@ $peticion_select = $instancia -> listar_programas();
       $(this).attr("src",ruta_visualizacion);
     }
   });
+
+
+   $(".btn-editar").click(function(){
+    var id = $(this).attr("id");
+   
+     $(".elemento").val(id);
+
+     $(".btn-editar-consulta").click();
+
+
+
+
+   });
 
 
  });

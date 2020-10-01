@@ -53,13 +53,13 @@ $peticion_select = $instancia -> listar_publicaciones();
       <div class="column-table-encabezado-pub encabezado-visible" style="font-weight: 900;">Contenido</div>
       <div class="column-table-contenido-pub"><textarea style="width:90%; margin:auto; resize:none; height:80%;" readonly>'.$blog['contenido_pub'].'</textarea></div>
       <div class="column-table-encabezado-pub encabezado-visible" style="font-weight: 900;">Opciones</div>
-      <div class="column-table-contenido-pub"> <i class="fa fa-pencil btn-editar-blog" id="'.$blog['blog_id'].'" style="margin:auto; color:orange; cursor:pointer;"></i><i class="fa fa-trash btn-eliminar-blog" id="'.$blog['blog_id'].'" style="margin:auto; color:red; cursor:pointer;"></i></div>';
+      <div class="column-table-contenido-pub"> <i class="fa fa-pencil btn-editar" id="'.$blog['blog_id'].'" style="margin:auto; color:orange; cursor:pointer;"></i><i class="fa fa-trash btn-eliminar-blog" id="'.$blog['blog_id'].'" style="margin:auto; color:red; cursor:pointer;"></i></div>';
     }
 
     ?>
-    <form action="editar_blog.php" method="post" style="display:none">
-      <input type="hidden" class="codigo_blog" name="blog_id">
-      <input type="submit" class="btn-cambiar_blog">
+    <form action="editar_blog" method="post" style="display:none">
+      <input type="hidden" class="elemento" name="blog_id">
+      <input type="submit" class="btn-editar-consulta">
     </form>
     
     
@@ -87,6 +87,17 @@ $peticion_select = $instancia -> listar_publicaciones();
         var ruta_visualizacion = "../"+ruta_sistema;
         $(this).attr("src",ruta_visualizacion);
       }
+    });
+
+
+     $(".btn-editar").click(function(){
+      var id = $(this).attr("id");
+      $(".elemento").val(id);
+      $(".btn-editar-consulta").click();
+      
+
+
+
     });
 
 

@@ -49,5 +49,23 @@ class Blog extends CI_Controller {
 		return $peticion_select;
 	}
 
+
+	public function editar_blog(){
+		$this->load->view('editar_blog');	
+	}
+
+	public function listar_publicacion_unica_consulta($elemento){
+		$instancia = new Blog_model();
+		$peticion_select = $instancia -> consultar_publicacion_unica($elemento);
+		return $peticion_select;	
+	}
+
+	public function editar_publicacion_datos(){
+		extract($_POST);
+		//print_r($_POST);
+		$instancia = new Blog_model();
+		$peticion_update = $instancia -> editar_publicacion_datos($blog_id , $titulo_pub , $contenido_pub , $autor_pub , $portada_pub , $tipo_portada);
+	}
+
 	
 }

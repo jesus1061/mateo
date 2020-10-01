@@ -4,6 +4,7 @@ include_once "Banner.php";
 include_once "Programas.php";
 include_once "Talento.php";
 include_once "Blog.php";
+include_once "Galeria.php";
 
 class Select_controller{
 
@@ -44,6 +45,19 @@ class Select_controller{
 		return $peticion_select;	
 	}
 
+	public function listar_albumnes(){
+
+		$instancia = new Galeria();
+		$peticion_select = $instancia ->listar_albumnes_datos();
+		return $peticion_select;
+	}
+	public function listar_elementos_galeria(){
+
+		$instancia = new Galeria();
+		$peticion_select = $instancia ->listar_elementos_galeria_datos();
+		return $peticion_select;
+	}
+
 	public function consultar_banner_unico($elemento){
 		$instancia = new Banner();
 		$peticion_select = $instancia -> consultar_banner_unico($elemento);
@@ -65,5 +79,28 @@ class Select_controller{
 		return $peticion_select;
 
 	}
+
+	public function listar_publicacion_unica($elemento){
+		$instancia = new Blog();
+		$peticion_select = $instancia -> listar_publicacion_unica_consulta($elemento);
+		return $peticion_select;
+
+	}
+	public function listar_album_unico($elemento){
+		$instancia = new Galeria();
+		$peticion_select = $instancia -> listar_album_unico_consulta($elemento);
+		return $peticion_select;
+
+	}
+
+	public function listar_elemento_galeria_unico($elemento){
+		$instancia = new Galeria();
+		$peticion_select = $instancia -> listar_elemento_galeria__unico_consulta($elemento);
+		return $peticion_select;
+
+	}
+
+
+
 }
 ?>

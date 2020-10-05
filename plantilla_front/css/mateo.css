@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+h1 , h2, h3 , h4 , h5{
+	font-family: 'Fjalla One', sans-serif;
+}
+.contenido-programa{
+	text-align: justify;
+}
+.titulo-programa{
+	color: black;
+	font-weight: 900;
+}
+#team-section , #programas , #blog-section , #nosotros , #mision , #vision{
+	
+	margin-top: 50px;
+	margin-bottom: 50px;
+	background-color: rgb(255 , 255 , 255 , 0.8);
+}
+#donate-section{
+	margin-top: -50px;
+	margin-bottom: -50px;
+}
+#home-section{
+	background-image: url('../images/hero_1_no-text.jpg');
+	background-attachment: fixed;
+}
+footer{
+	
+	margin-top: 50px;
+	
+		
+}
+.fichas{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.img-logo{
+	width: 250px;
+	height: 60px;
+	
+}
+
+
+.sticky-wrapper .site-navbar{
+	background-color:rgb(31 ,133 , 151);	
+	
+}
+
+.site-menu > li > a {
+	color: white;
+	font-weight: 900;
+}
+a:hover{
+	color: blue;
+}
+
+.btn-donar{
+	background-color: rgb(255 , 180 , 29); border:none; font-size: 25px;
+	width: 100%;
+	margin: auto;
+	display: table;
+	background-color: rgb(255 , 180 , 29 );
+	color: white;
+	font-weight: 900;
+	font-style: oblique;
+	cursor: pointer;
+}
+
+.btn-donar:hover{
+		background-color:rgb(31 ,133 , 151 , 0.7);	
+		color: rgb(255 , 180 , 29);
+}
+.administrador{
+color: rgb(255 , 180 , 29 );	
+font-style: oblique;
+font-weight: 900;
+}
+.administrador:hover{
+color: rgb(255 , 180 , 29 );	
+font-style: oblique;
+}
+.ver-mas{
+	color: rgb(31 ,133 , 151 , 0.7);
+	font-weight: 900;
+	text-decoration: underline;	
+}
+.contenido-publicacion{
+	text-align: justify;
+}
+
+#contact-section{
+background-color:rgb(255 , 180 , 29);	
+}
+
+

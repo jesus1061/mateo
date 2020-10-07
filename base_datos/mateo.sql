@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-10-2020 a las 21:47:38
+-- Tiempo de generación: 07-10-2020 a las 23:04:58
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.4.10
 
@@ -265,7 +265,8 @@ INSERT INTO `visitas` (`visita_id`, `visita_fecha`) VALUES
 (31, '2020-10-07 16:19:20'),
 (32, '2020-10-07 17:40:43'),
 (33, '2020-10-07 18:00:32'),
-(34, '2020-10-07 19:45:06');
+(34, '2020-10-07 19:45:06'),
+(35, '2020-10-07 21:04:17');
 
 --
 -- Índices para tablas volcadas
@@ -394,7 +395,7 @@ ALTER TABLE `usuarios_administradores`
 -- AUTO_INCREMENT de la tabla `visitas`
 --
 ALTER TABLE `visitas`
-  MODIFY `visita_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `visita_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- Restricciones para tablas volcadas

@@ -19,7 +19,7 @@
 		<header>
 			<div class="main">
 				<div class="logotipo-contenedor">
-					<img src="images/logotipo.png" alt="" class="logotipo-img">
+					<img src="../plantilla_back/img/logo.png" alt="" class="logotipo-img">
 					<i class="fa fa-navicon" id="btn-abrir-menu"></i>
 				</div>
 				
@@ -38,13 +38,13 @@
 				<div class="form-group">
 					<label for=""  class="data-login" >Usuario</label>
 					<br>
-					<input type="text" name="usuario" class="data-login" id="usuario" autocomplete="off">
+					<input type="text" name="usuario" class="data-login" id="usuario" >
 
 				</div>
 				<div class="form-group">
 					<label for=""   class="data-login">contraseña</label>
 					<br>
-					<input type="password" name="clave" class="data-login" id="clave" autocomplete="off">
+					<input type="password" name="clave" class="data-login" id="clave">
 
 				</div>
 				<div class="form-group">
@@ -61,6 +61,9 @@
 		
 	</div>
 	<script>
+		$("input , textarea").attr("autocomplete" ,"off");
+		$("body").attr("oncopy","return false");
+		$("body").attr("onpaste","return false");
 		$("#btn-login").click(function(){
 
 			if($("#usuario").val().length > 0  && $("#clave").val().length > 0){
@@ -86,6 +89,7 @@
                 }
             });
 		}
+
 		
 	</script>
 </body>

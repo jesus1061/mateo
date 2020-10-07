@@ -54,7 +54,7 @@ $peticion_select = $instancia -> listar_archivos();
             <br>
 
             <div class='opciones-archivo'>
-            <i class='fa fa-trash' id='btn-borrar-archivo' title='".$archivo['id_archivo']."'></i>
+            <i class='fa fa-trash' id='btn-borrar-archivo' title='".$archivo['id_archivo']."' rel='".$archivo['tipo_archivo']."'></i>
 
             </div>
 
@@ -88,13 +88,17 @@ $peticion_select = $instancia -> listar_archivos();
 
     $(".fa-trash").click(function(){
       var id_archivo = $(this).attr("title");
-      alertify.confirm('Eliminar archivo multimedia', '¿Deseas eliminar este archivo?', function(){ alertify.success('Archivo eliminado con exito');
+      var ruta = $(this).parent().parent().children().attr("src");
+      var tipo_archivo = $(this).attr("rel")
+     
+      
+      alertify.confirm('Eliminar archivo multimedia', '¿Deseas eliminar este archivo recuerde que eliminara tambien todos los elementos creados con este archivo?', function(){ alertify.success('Archivo eliminado con exito');
 
 
 
         $.ajax({
-                data:  { archivo_id:id_archivo}, //datos que se envian a traves de ajax
-                url:   'eliminar_banner', //archivo que recibe la peticion
+                data:  { archivo_id:id_archivo , arg_ruta:ruta , tipo_archivo_arg:tipo_archivo}, //datos que se envian a traves de ajax
+                url:   'eliminar_archivo', //archivo que recibe la peticion
                 type:  'post', //método de envio
                 beforeSend: function () {
                   //$(".respuesta").html("Procesando, espere por favor...");

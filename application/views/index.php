@@ -1,6 +1,17 @@
 <?php
+error_reporting(0);
+session_start();
 include_once "application/controllers/select_controller.php";
 $instancia = new Select_controller();
+$_SESSION['visitante'];
+if (isset($_SESSION['visitante'])) 
+{
+  echo "Variable definida!!!";
+}else
+{
+  $peticion_insert_visitas = $instancia -> crear_visita();
+  $_SESSION['visitante'] = 1;
+}
 $peticion_select = $instancia -> listar_banners();
 $peticion_select_talento = $instancia ->listar_personal();
 $peticion_select_publicaciones = $instancia ->listar_publicaciones();
@@ -34,7 +45,7 @@ $peticion_select_programas = $instancia -> listar_programas();
   <link rel="stylesheet" href="plantilla_front/css/mateo.css">
 
 </head>
-<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300" oncopy="return false" onpaste="return false">
 
   <div class="site-wrap"  id="home-section">
 
@@ -119,7 +130,7 @@ $peticion_select_programas = $instancia -> listar_programas();
     </div>
 
   </div>
-<div class="d-block d-md-flex intro-engage fichas">
+  <div class="d-block d-md-flex intro-engage fichas">
     <div class="">
       <h2 style="color: rgb(255 , 180 , 29)" >Trabajo social</h2>
       <p style="color: white; font-weight: 900;">Accusantium dignissimos voluptas rem consequatur blanditiis error ratione illo sit quasi ut praesentium magnam</p>
@@ -346,27 +357,32 @@ $peticion_select_programas = $instancia -> listar_programas();
         <form action="#" method="post">
           <div class="form-group row">
             <div class="col-md-6 mb-4 mb-lg-0">
-              <input type="text" class="form-control" placeholder="Nombre*">
+              <input type="text" class="form-control" placeholder="Nombre*" name="nombre" id="nombre">
             </div>
             <div class="col-md-6">
-              <input type="text" class="form-control" placeholder="Apellido*">
+              <input type="text" class="form-control" placeholder="Apellido*" name="apellido" id="apellido">
             </div>
           </div>
 
           <div class="form-group row">
             <div class="col-md-12">
-              <input type="text" class="form-control" placeholder="Correo electronico*">
+              <input type="text" class="form-control" placeholder="Correo electronico*" name="correo" id="correo">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-md-12">
+              <input type="number" class="form-control" placeholder="Telefono*" name="telefono" id="telefono">
             </div>
           </div>
 
           <div class="form-group row">
             <div class="col-md-12">
-              <textarea name="" id="" class="form-control" placeholder="Escribe tu mensaje*" cols="30" rows="10"></textarea>
+              <textarea name="mensaje" class="form-control" placeholder="Escribe tu mensaje*" cols="30" rows="10" id="mensaje"></textarea>
             </div>
           </div>
           <div class="form-group row">
             <div class="col-md-6 ml-auto">
-              <input type="submit" class="btn btn-block btn-primary text-white py-3 px-5" value="Enviar" style="background-color: rgb(31 ,133 , 151); border:none; color: white;">
+              <input type="button" id="crear_contacto" class="btn btn-block btn-primary text-white py-3 px-5" value="Enviar" style="background-color: rgb(31 ,133 , 151); border:none; color: white;">
             </div>
           </div>
         </form>
@@ -404,7 +420,7 @@ $peticion_select_programas = $instancia -> listar_programas();
         <div class="mb-5">
 
           <h2 class="footer-heading mb-4">Subscribete a nuestro boletín de noticias</h2>
-          <form action="#" method="post">
+          <form action="guardar_contacto" method="post">
             <div class="input-group mb-3">
               <input type="text" class="form-control border-secondary text-white bg-transparent" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2">
               <div class="input-group-append">
@@ -419,13 +435,24 @@ $peticion_select_programas = $instancia -> listar_programas();
           <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
           <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
           <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+          <h2 class="footer-heading mb-4">Visitantes</h2>
+          <?php
+          $peticion_select_visitas = $instancia -> consultar_visitas();
+          foreach($peticion_select_visitas as $visitas){
+            echo ' <h2 class="footer-heading mb-4">'.$visitas['count(*)'].'</h2>';
+          }
+          ?>
+
+
         </form>
       </div>
     </div>
 
   </div>
 </footer>
+<div class="confirmar_cerrar">
 
+</div>
 </div>
 
 <script src="plantilla_front/js/jquery-3.3.1.min.js"></script>

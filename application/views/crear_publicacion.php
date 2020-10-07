@@ -91,7 +91,7 @@ $peticion_select = $instancia -> listar_archivos();
 
               ".$archivo['archivo']."
               <br>
-              <span class='nombre-archivo-label'> ".$archivo['nombre_archivo']."</span>
+              <span class='nombre-archivo-label' style='cursor:pointer'> ".$archivo['nombre_archivo']."</span>
 
               <br>
               <div class='opciones-archivo'>
@@ -106,7 +106,7 @@ $peticion_select = $instancia -> listar_archivos();
             $(".cont-archivo .img-archivo").each(function(){
               var tipo = $(this).attr("id");
               if(tipo == "ve"){
-                $(this).parent().remove();
+                //$(this).parent().remove();
               }
               if(tipo == "ii"){
                var ruta_sistema = $(this).attr("src");
@@ -142,9 +142,9 @@ $peticion_select = $instancia -> listar_archivos();
        </div>
 
 
-     
 
-      
+
+
 
        
 
@@ -174,7 +174,7 @@ $peticion_select = $instancia -> listar_archivos();
       $(".container-imagenes").css("display","table");
     });
 
- $(".img-archivo").click(function(){
+    $(".img-archivo").click(function(){
       var tipo_banner = $(this).attr("id");
       $(".tipo-banner").val(tipo_banner);
       if(tipo_banner == "ii"){
@@ -185,7 +185,7 @@ $peticion_select = $instancia -> listar_archivos();
       } else{
        var ruta_seleccionada = $(this).attr("src");
        $("#btn-abrir-multimedia").val(ruta_seleccionada);
-         validacion_programa = 1;
+       validacion_programa = 1;
      }
 
    });
@@ -201,7 +201,7 @@ $peticion_select = $instancia -> listar_archivos();
       }
     });
 
-     $(".img-archivo").each(function(){
+    $(".img-archivo").each(function(){
       var tipo_banner = $(this).attr("id");
 
 
@@ -211,6 +211,21 @@ $peticion_select = $instancia -> listar_archivos();
         $(this).attr("src",ruta_visualizacion);
       }
     });
+
+
+
+    /*Nueva linea agregar tambien en edicion de publicación*/
+    $(".nombre-archivo-label").click(function(){
+     var tipo =$(this).prev().prev().attr("id");
+
+     if(tipo == "ve"){
+      $(".tipo-banner").val("ve");
+      var ruta_iframe = $(this).prev().prev().attr("src");
+      $("#btn-abrir-multimedia").val(ruta_iframe);
+      validacion_programa = 1;
+    }
+
+  });
   });
 </script>
 

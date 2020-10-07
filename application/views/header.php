@@ -3,7 +3,7 @@
     <div class="logotipo-contenedor">
       <img src="../plantilla_back/img/logo.png" alt="" class="logotipo-img">
       <br>
-      <!--  <label for=""><?php echo $_SESSION['usuario']; ?></label> <label for="">/</label><label for="" style="color:blue;cursor:pointer" class="btn-cerrar-sesion"> Cerrar sesion</label> -->
+      <label for=""><?php echo $_SESSION['usuario']; ?></label> <label for="">/</label><label for="" style="color:blue;cursor:pointer" class="btn-cerrar-sesion"> Cerrar sesion</label> 
     </div>
     <div class="main-option">
       <div class="option">
@@ -77,10 +77,10 @@
             <li id="menu-data">Modulo estadistico</li>
           </div>
           <div class="item-option-sub">
-            <li id="enlace-dona">Ver visitas</li>
+            <li id="opcion15">Ver visitas</li>
           </div>
           <div class="item-option-sub">
-            <li id="ver-contactos">Ver contactos</li>
+            <li id="opcion16">Ver contactos</li>
           </div>
         </div>
         <div class="option-cont">

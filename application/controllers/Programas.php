@@ -1,4 +1,6 @@
 <?php
+session_start();
+error_reporting(0);
 include_once "application/models/modelo_programa.php";
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -21,12 +23,38 @@ class Programas extends CI_Controller {
 	 */
 	public function inicio()
 	{
-		$this->load->view('crear_programa');
+		
+		if (isset($_SESSION['usuario'])) 
+		{
+			$this->load->view('crear_programa');
+			
+			
+
+		}else{
+
+			echo '<script>alert("Su sesión termino");</script>';
+			echo '<script>
+			window.location.href = "../panel/inicio";
+			</script>';
+		}
 	}
 
 	public function listar_programas()
 	{
-		$this->load->view('listar_programas');
+		
+		if (isset($_SESSION['usuario'])) 
+		{
+			$this->load->view('listar_programas');
+			
+			
+
+		}else{
+
+			echo '<script>alert("Su sesión termino");</script>';
+			echo '<script>
+			window.location.href = "../panel/inicio";
+			</script>';
+		}
 	}
 
 
@@ -52,7 +80,20 @@ class Programas extends CI_Controller {
 
 
 	public function editar_programa(){
-		$this->load->view('editar_programa');
+		
+		if (isset($_SESSION['usuario'])) 
+		{
+			$this->load->view('editar_programa');
+			
+			
+
+		}else{
+
+			echo '<script>alert("Su sesión termino");</script>';
+			echo '<script>
+			window.location.href = "../panel/inicio";
+			</script>';
+		}
 
 	}
 
@@ -81,7 +122,7 @@ class Programas extends CI_Controller {
 		extract($_POST);
 		$instancia = new modelo_programa();
 		$peticion_delete = $instancia -> eliminar_elemento($archivo_id);
-			echo '<script>
+		echo '<script>
 		alert("Programa eliminado con exito");
 		window.location.href = "listar_programas";
 		</script>';

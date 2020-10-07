@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+error_reporting(0);
 include_once "application/models/panel_model.php";
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -20,7 +20,34 @@ class Panel extends CI_Controller {
 	 * So any other public methods not prefixed with an underscore will
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
+
+
 	 */
+
+
+
+
+
+
+
+	public function index(){
+		if (isset($_SESSION['usuario'])) 
+		{
+			
+			echo '<script>alert("Tiene una sesión activa");</script>';
+			echo '<script>
+			window.location.href = "inicio";
+			</script>';
+
+		} else{
+			$this->load->view('login');
+			
+
+		}
+	}
+
+
+	
 	public function inicio()
 	{
 		$this->load->view('panel');
@@ -30,9 +57,9 @@ class Panel extends CI_Controller {
 			
 		} else{
 
-			echo '<script>alert("Su sesión ha caducado");</script>';
+			echo '<script>alert("Inicia sesión nuevamente");</script>';
 			echo '<script>
-			window.location.href = "login";
+			window.location.href = "index";
 			</script>';
 
 		}
@@ -72,7 +99,7 @@ class Panel extends CI_Controller {
 
 			echo '<script>alert("Bienvenido al sistema");</script>';
 			echo '<script>
-			window.location.href = "index";
+			window.location.href = "../panel/inicio";
 			</script>';
 
 
@@ -83,8 +110,14 @@ class Panel extends CI_Controller {
 		}
 	}
 
-	public function index(){
-		$this->load->view('panel');
 
+	public function salir(){
+		session_destroy();
+		echo '<script>alert("Has cerrado sesión");</script>';
+		echo '<script>
+		window.location.href = "index";
+		</script>';
 	}
+
+
 }

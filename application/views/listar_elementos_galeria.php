@@ -41,7 +41,7 @@ $peticion_select = $instancia -> listar_elementos_galeria();
             Listado de Elementos de galeria
           </div>
           <div class="table" id="encabezado_tabla">
-            <div class="column-table-banner-encabezado encabezado-oculto" style="font-weight: 900;"><label>Titulo del banner</label></div>
+            <div class="column-table-banner-encabezado encabezado-oculto" style="font-weight: 900;"><label>Titulo del elemento</label></div>
             <div class="column-table-banner-encabezado encabezado-oculto" style="font-weight: 900;"><label>Contenido</label></div>
             <div class="column-table-banner-encabezado encabezado-oculto" style="font-weight: 900;"><label>Opciones</label></div>
 
@@ -49,7 +49,7 @@ $peticion_select = $instancia -> listar_elementos_galeria();
           <div class="table" id="resultados">
             <?php
             foreach($peticion_select as $elemento){
-              echo '<div class="column-table-banner-encabezado encabezado-visible" style="font-weight: 900;"><label>Titulo del banner</label></div>';
+              echo '<div class="column-table-banner-encabezado encabezado-visible" style="font-weight: 900;"><label>Titulo del elemento</label></div>';
               echo '<div class="column-table-banner"><label style="margin:auto;">'.$elemento['contenido_galeria_nombre'].'</label></div>
               <div class="column-table-banner-encabezado encabezado-visible" style="font-weight: 900;"><label>Contenido</label></div>
               <div class="column-table-banner"><img id="'.$elemento['tipo_portada'].'" src="'.$elemento['contenido_galeria_foto'].'" class="img-archivo"></div>

@@ -1,4 +1,6 @@
 <?php
+session_start();
+error_reporting(0);
 include_once "application/models/galeria_model.php";
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -21,7 +23,21 @@ class Galeria extends CI_Controller {
 	 */
 	public function crear_album()/*Laza la vista para subir imagen interna*/
 	{
-		$this->load->view('crear_album');
+		
+
+		if (isset($_SESSION['usuario'])) 
+		{
+			$this->load->view('crear_album');
+			
+			
+
+		}else{
+
+			echo '<script>alert("Su sesión termino");</script>';
+			echo '<script>
+			window.location.href = "../panel/inicio";
+			</script>';
+		}
 	}
 
 	public function crear_album_registro(){
@@ -37,7 +53,21 @@ class Galeria extends CI_Controller {
 
 
 	public function listar_albumnes(){
-		$this->load->view('listar_albumnes');
+
+
+		if (isset($_SESSION['usuario'])) 
+		{
+			$this->load->view('listar_albumnes');
+			
+			
+
+		}else{
+
+			echo '<script>alert("Su sesión termino");</script>';
+			echo '<script>
+			window.location.href = "../panel/inicio";
+			</script>';
+		}
 
 	}
 
@@ -50,7 +80,23 @@ class Galeria extends CI_Controller {
 	}
 
 	public function editar_album(){
-		$this->load->view('editar_album');
+		
+
+
+		if (isset($_SESSION['usuario'])) 
+		{
+			$this->load->view('editar_album');
+			
+			
+
+		}else{
+
+			echo '<script>alert("Su sesión termino");</script>';
+			echo '<script>
+			window.location.href = "../panel/inicio";
+			</script>';
+		}
+
 
 	}
 
@@ -77,7 +123,21 @@ class Galeria extends CI_Controller {
 
 
 	public function crear_elemento(){
-		$this->load->view('crear_elemento_galeria');
+
+		if (isset($_SESSION['usuario'])) 
+		{
+			$this->load->view('crear_elemento_galeria');
+			
+			
+
+		}else{
+
+			echo '<script>alert("Su sesión termino");</script>';
+			echo '<script>
+			window.location.href = "../panel/inicio";
+			</script>';
+		}
+
 
 	}
 
@@ -96,7 +156,20 @@ class Galeria extends CI_Controller {
 
 	public function ver_elementos_galeria(){
 
-		$this->load->view('listar_elementos_galeria');
+		
+		if (isset($_SESSION['usuario'])) 
+		{
+			$this->load->view('listar_elementos_galeria');
+			
+			
+
+		}else{
+
+			echo '<script>alert("Su sesión termino");</script>';
+			echo '<script>
+			window.location.href = "../panel/inicio";
+			</script>';
+		}
 	}
 
 	public function listar_elementos_galeria_datos(){
@@ -108,7 +181,20 @@ class Galeria extends CI_Controller {
 
 
 	public function editar_elemento_galeria(){
-		$this->load->view('editar_elemento_galeria');
+		
+		if (isset($_SESSION['usuario'])) 
+		{
+			$this->load->view('editar_elemento_galeria');
+			
+			
+
+		}else{
+
+			echo '<script>alert("Su sesión termino");</script>';
+			echo '<script>
+			window.location.href = "../panel/inicio";
+			</script>';
+		}
 	}
 
 	public function listar_elemento_galeria__unico_consulta($elemento){

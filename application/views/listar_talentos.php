@@ -37,11 +37,11 @@ $peticion_select = $instancia -> listar_personal();
 
         <div class="contenedor-tabla">
           <div class="encabezado-formulario">
-            Listado de elementos del slider
+            Listado de funcionarios
           </div>
           <div class="table" id="encabezado_tabla">
-            <div class="column-table-banner-encabezado encabezado-oculto" style="font-weight: 900;"><label>Titulo del banner</label></div>
-            <div class="column-table-banner-encabezado encabezado-oculto" style="font-weight: 900;"><label>Contenido</label></div>
+            <div class="column-table-banner-encabezado encabezado-oculto" style="font-weight: 900;"><label>Nombre funcionario</label></div>
+            <div class="column-table-banner-encabezado encabezado-oculto" style="font-weight: 900;"><label>Foto</label></div>
             <div class="column-table-banner-encabezado encabezado-oculto" style="font-weight: 900;"><label>Opciones</label></div>
 
           </div>
@@ -50,8 +50,8 @@ $peticion_select = $instancia -> listar_personal();
             foreach($peticion_select as $personal){
               echo '<div class="column-table-banner-encabezado encabezado-visible" style="font-weight: 900;"><label>Titulo del banner</label></div>';
               echo '<div class="column-table-banner"><label style="margin:auto;">'.$personal['personal_nombre'].'</label></div>
-              <div class="column-table-banner-encabezado encabezado-visible" style="font-weight: 900;"><label>Contenido</label></div>
-              <div class="column-table-banner"><img id="'.$personal['tipo_portada'].'" src="'.$personal['personal_foto'].'" class="img-archivo"></div>
+              <div class="column-table-banner-encabezado encabezado-visible" style="font-weight: 900;"><label>Foto</label></div>
+              <div class="column-table-banner"><img id="'.$personal['tipo_portada'].'" src="'.$personal['personal_foto'].'" class="img-archivo" style="width:40%;"></div>
               <div class="column-table-banner-encabezado encabezado-visible" style="font-weight: 900;"><label>Opciones</label></div>
               <div class="column-table-banner"><i class="fa fa-pencil btn-editar " id="'.$personal['personal_id'].'" style="color:orange; cursor:pointer; margin:auto;"></i><i class="fa fa-trash btn-eliminar-slider" id="'.$personal['personal_id'].'" style="color:red; cursor:pointer; margin:auto;"></i></div>
               ';

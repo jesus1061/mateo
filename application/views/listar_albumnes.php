@@ -41,7 +41,7 @@ $peticion_select = $instancia -> listar_albumnes();
             Listado de albumnes
           </div>
           <div class="table" id="encabezado_tabla">
-            <div class="column-table-banner-encabezado encabezado-oculto" style="font-weight: 900;"><label>Titulo del banner</label></div>
+            <div class="column-table-banner-encabezado encabezado-oculto" style="font-weight: 900;"><label>Titulo del Albúm</label></div>
             <div class="column-table-banner-encabezado encabezado-oculto" style="font-weight: 900;"><label>Contenido</label></div>
             <div class="column-table-banner-encabezado encabezado-oculto" style="font-weight: 900;"><label>Opciones</label></div>
 
@@ -49,7 +49,7 @@ $peticion_select = $instancia -> listar_albumnes();
           <div class="table" id="resultados">
             <?php
             foreach($peticion_select as $album){
-              echo '<div class="column-table-banner-encabezado encabezado-visible" style="font-weight: 900;"><label>Titulo del banner</label></div>';
+              echo '<div class="column-table-banner-encabezado encabezado-visible" style="font-weight: 900;"><label>Titulo del Albúm</label></div>';
               echo '<div class="column-table-banner"><label style="margin:auto;">'.$album['album_titulo'].'</label></div>
               <div class="column-table-banner-encabezado encabezado-visible" style="font-weight: 900;"><label>Contenido</label></div>
               <div class="column-table-banner"><img id="'.$album['tipo_portada'].'" src="'.$album['album_portada_principal'].'" class="img-archivo"></div>

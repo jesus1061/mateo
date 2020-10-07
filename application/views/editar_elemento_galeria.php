@@ -44,7 +44,7 @@ foreach($peticion_select_unico as $elemento_galeria){
 
         <form action="editar_elemento_galeria_unico" method="post" class="formulario">
           <div class="encabezado-formulario">
-            Editar elemento galeria
+            Editar elemento galería
           </div>
 
 
@@ -59,7 +59,9 @@ foreach($peticion_select_unico as $elemento_galeria){
 
 
           <div class="form-control">
-            <label for="" class="label-form">Nombre del elemento</label>
+        
+          
+            <label for="" class="label-form">Nombre del elemento  <span style="color:red; font-weight:900;">(Este campo es obligatorio que lo llenes)</span></label>
             <br>
             <br>
             <input type="text" class="input-form" id="nombre_banner"  name="contenido_galeria_nombre" placeholder="Nombre del elemento de galeria" required value="<?php echo $elemento_galeria['contenido_galeria_nombre'] ?>">
@@ -69,7 +71,9 @@ foreach($peticion_select_unico as $elemento_galeria){
 
 
           <div class="form-control">
-            <label for="" class="label-form">Seleccionar el album que aparecera este elemento</label>
+           
+         
+            <label for="" class="label-form">Seleccionar el album que aparecera este elemento  <span style="color:red; font-weight:900;">(Este campo es obligatorio que lo llenes)</span></label>
             <br>
             <br>
             <?php $album_id = $elemento_galeria['album_id'];
@@ -104,6 +108,9 @@ foreach($peticion_select_unico as $elemento_galeria){
 
 
           <div class="form-control">
+            <label for="" class="label-archivo campos-archivo" style="color:black; font-weight:900;">Nombre del Funcionario <span style="color:red; font-weight:900;">(Este campo es obligatorio que lo llenes)</span> </label>
+           <br>
+           <br>
             <label for="" class="label-form">Cargar imagen a utilizar</label>
             <br>
             <br>

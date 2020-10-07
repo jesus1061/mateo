@@ -1,4 +1,6 @@
 <?php
+session_start();
+error_reporting(0);
 include_once "application/models/blog_model.php";
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -21,12 +23,64 @@ class Blog extends CI_Controller {
 	 */
 	public function inicio()
 	{
-		$this->load->view('crear_publicacion');
+		
+
+		if (isset($_SESSION['usuario'])) 
+		{
+			$this->load->view('crear_publicacion');
+			
+			
+
+		}else{
+
+			echo '<script>alert("Su sesión termino");</script>';
+			echo '<script>
+			window.location.href = "../panel/inicio";
+			</script>';
+		}
 	}
 
 	public function listar_blogs()
 	{
-		$this->load->view('listar_blogs');
+
+		if (isset($_SESSION['usuario'])) 
+		{
+			$this->load->view('listar_blogs');
+			
+			
+
+		}else{
+
+			echo '<script>alert("Su sesión termino");</script>';
+			echo '<script>
+			window.location.href = "../panel/inicio";
+			</script>';
+		}
+	}
+
+	public function listar_visitas(){
+		$instancia = new Blog_model();
+		$peticion_select = $instancia -> listar_visitas();	
+		return $peticion_select;
+	}
+
+	public function listar_visitas_conteo(){
+		$instancia = new Blog_model();
+		$peticion_select = $instancia -> listar_visitas_conteo();	
+		foreach($peticion_select as $conteo_visitas){
+			echo '<script>
+			alert("Tu sitio web a la fecha tiene '.$conteo_visitas['count(*)'].' Visitas");
+			</script>';
+			echo '<script>
+			window.location.href = "../panel/inicio";
+			</script>';
+		}
+	}
+
+
+	public function crear_visita(){
+		$instancia = new Blog_model();
+		$peticion_insert = $instancia -> crear_visita();	
 	}
 
 
@@ -51,7 +105,20 @@ class Blog extends CI_Controller {
 
 
 	public function editar_blog(){
-		$this->load->view('editar_blog');	
+		
+		if (isset($_SESSION['usuario'])) 
+		{
+			$this->load->view('editar_blog');	
+			
+			
+
+		}else{
+
+			echo '<script>alert("Su sesión termino");</script>';
+			echo '<script>
+			window.location.href = "../panel/inicio";
+			</script>';
+		}
 	}
 
 	public function listar_publicacion_unica_consulta($elemento){

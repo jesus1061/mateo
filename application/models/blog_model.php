@@ -2,6 +2,61 @@
 include_once "conexion.php";
 class Blog_model{
 
+	public function crear_visita(){
+		$instancia_conexion = new Conexion();
+		$pdo = $instancia_conexion -> obtener_conexion();
+
+		$sql = $pdo->prepare('INSERT INTO visitas (visita_fecha) VALUES 
+
+			(now())');
+
+		$sql->execute();
+
+
+		
+
+	}
+
+
+	public function listar_visitas(){
+		$instancia_conexion = new Conexion();
+		$pdo = $instancia_conexion -> obtener_conexion();
+		$sql = $pdo->prepare('SELECT count(*) FROM visitas');
+		$sql->execute();
+		$resultado = $sql->fetchAll();
+
+		return $resultado;	
+	}
+
+	public function listar_visitas_conteo(){
+		$instancia_conexion = new Conexion();
+		$pdo = $instancia_conexion -> obtener_conexion();
+		$sql = $pdo->prepare('SELECT count(*) FROM visitas');
+		$sql->execute();
+		$resultado = $sql->fetchAll();
+
+		return $resultado;	
+	}
+
+
+	public function crear_contacto($arg_nombre , $arg_apellido , $arg_correo , $arg_mensaje , $arg_telefono){
+		$instancia_conexion = new Conexion();
+		$pdo = $instancia_conexion -> obtener_conexion();
+		$nombre_completo = $arg_nombre." ".$arg_apellido;
+
+		$sql = $pdo->prepare('INSERT INTO contactos (nombre_completo, correo, mensaje , telefono) VALUES 
+
+			(:nombre_completo, :correo , :mensaje , :telefono)');
+
+
+		$sql->bindParam(':nombre_completo', $nombre_completo);
+		$sql->bindParam(':correo', $arg_correo);
+		$sql->bindParam(':mensaje', $arg_mensaje);
+		$sql->bindParam(':telefono', $arg_telefono);
+					
+		$sql->execute();	
+	}
+
 	public function crear_publicacion($titulo_pub , $contenido_pub , $autor_pub , $portada_pub , $tipo_portada){
 		
 		$instancia_conexion = new Conexion();

@@ -55,7 +55,7 @@ class Modelo_multimedia {
 	}
 
 
-	public function eliminar_archivo_multimedia($archivo_id){
+	public function eliminar_archivo_multimedia($archivo_id , $arg_ruta , $tipo_archivo_arg){
 
 
 
@@ -67,6 +67,7 @@ class Modelo_multimedia {
 		$sql2->bindParam(':id', $archivo_id);
 		$sql2->execute();
 		$resultado = $sql2->fetchAll();
+
 		foreach($resultado as $archivo){
 			echo '<div class="archivo_seleccionado" style="display:none">';
 			echo $archivo['archivo'];
@@ -89,7 +90,45 @@ class Modelo_multimedia {
 		$sql->bindParam(':id', $archivo_id);
 		
 		$sql->execute();
+		
+		
 
+	}
+
+
+	public function borrado_masivo($ruta){
+		$instancia_conexion = new Conexion();
+		$pdo = $instancia_conexion -> obtener_conexion();
+		/*bORRAR BANNER QUE CONINCIDAN CON ESE ELEMENTO MULTIMEDIA*/
+		$sql1 = $pdo->prepare('DELETE FROM banners  WHERE banner_imagen = :ruta');
+		$sql1->bindParam(':ruta', $ruta);
+		$sql1->execute();
+
+		/*bORRAR TALENTO QUE COINCIDA CON ESE ELEMENTO*/
+		$sql2 = $pdo->prepare('DELETE FROM personal  WHERE personal_foto = :ruta');
+		$sql2->bindParam(':ruta', $ruta);
+		$sql2->execute();
+		
+		/*bORRAR PROGRAMA QUE COINCIDA CON ESE ELEMENTO*/
+		$sql3 = $pdo->prepare('DELETE FROM programas  WHERE portada_programa = :ruta');
+		$sql3->bindParam(':ruta', $ruta);
+		$sql3->execute();
+		
+		/*bORRAR PUBLICACIONES QUE COINCIDA CON ESE ELEMENTO*/
+		$sql4 = $pdo->prepare('DELETE FROM blog  WHERE portada_pub = :ruta');
+		$sql4->bindParam(':ruta', $ruta);
+		$sql4->execute();
+
+
+		/*bORRAR elementos galeria QUE COINCIDA CON ESE ELEMENTO*/
+		$sql5 = $pdo->prepare('DELETE FROM contenido_galeria  WHERE contenido_galeria_foto = :ruta');
+		$sql5->bindParam(':ruta', $ruta);
+		$sql5->execute();
+
+		/*bORRAR albuma QUE COINCIDA CON ESE ELEMENTO*/
+		$sql6 = $pdo->prepare('DELETE FROM albumnes  WHERE album_portada_principal = :ruta');
+		$sql6->bindParam(':ruta', $ruta);
+		$sql6->execute();
 	}
 
 

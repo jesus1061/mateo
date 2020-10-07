@@ -56,7 +56,7 @@ foreach($peticion_select_unico as $banner_consultado){
         </div>
 
          <div class="form-control">
-          <label for="" class="label-form">Titulo del banner</label>
+          <label for="" class="label-form">Titulo del banner  <span style="color:red; font-weight:900;">(Este campo es obligatorio que lo llenes)</span></label>
           <br>
           <br>
           <input type="text" class="input-form" id="nombre_banner"  name="banner_nombre" placeholder="Titulo del banner" required value="<?php echo $banner_consultado['banner_nombre'] ?>">
@@ -70,7 +70,7 @@ foreach($peticion_select_unico as $banner_consultado){
 
 
         <div class="form-control">
-          <label for="" class="label-form">Cargar banner a utilizar</label>
+          <label for="" class="label-form">Cargar banner a utilizar  <span style="color:red; font-weight:900;">(Este campo es obligatorio que lo llenes)</span></label>
           <br>
           <br>
           <input type="text" id="btn-abrir-multimedia" name="banner_imagen"  placeholder="Seleccionar archivo multimedia"   required  class="input-form"  style="background-color: gray; color: white; font-weight: 900; cursor: pointer" readonly value="<?php echo $banner_consultado['banner_imagen'] ?>">

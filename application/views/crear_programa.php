@@ -136,7 +136,7 @@ $peticion_select = $instancia -> listar_archivos();
 
 
 
-       <center><input type="button" id="btn-activar-formulario" value="Modificar Programa" style="display:block;"></center> 
+       <center><input type="button" id="btn-activar-formulario" value="Crear Programa" style="display:block;"></center> 
      </form>
    </div>
 
@@ -167,7 +167,7 @@ $peticion_select = $instancia -> listar_archivos();
       } else{
        var ruta_seleccionada = $(this).attr("src");
        $("#btn-abrir-multimedia").val(ruta_seleccionada);
-        validacion_programa = 1;
+       validacion_programa = 1;
      }
 
    });
@@ -184,7 +184,7 @@ $peticion_select = $instancia -> listar_archivos();
     });
 
 
-     $(".img-archivo").each(function(){
+    $(".img-archivo").each(function(){
       var tipo_banner = $(this).attr("id");
 
 

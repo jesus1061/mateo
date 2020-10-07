@@ -1,4 +1,6 @@
 <?php
+session_start();
+error_reporting(0);
 include_once "application/models/modelo_multimedia.php";
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -21,17 +23,56 @@ class Multimedia extends CI_Controller {
 	 */
 	public function imagen_interna()/*Laza la vista para subir imagen interna*/
 	{
-		$this->load->view('crear_imagen_interna');
+
+
+		if (isset($_SESSION['usuario'])) 
+		{
+			$this->load->view('crear_imagen_interna');	
+			
+			
+
+		}else{
+
+			echo '<script>alert("Su sesión termino");</script>';
+			echo '<script>
+			window.location.href = "../panel/inicio";
+			</script>';
+		}
+		
 	}
 
 	public function imagen_externa()/*Laza la vista para subir imagen externa*/
 	{
-		$this->load->view('crear_imagen_externa');
+		if (isset($_SESSION['usuario'])) 
+		{
+			$this->load->view('crear_imagen_externa');	
+			
+			
+
+		}else{
+
+			echo '<script>alert("Su sesión termino");</script>';
+			echo '<script>
+			window.location.href = "../panel/inicio";
+			</script>';
+		}
 	}
 
 	public function video_externo()/*Laza la vista para subir video externo*/
 	{
-		$this->load->view('crear_video_externo');
+		if (isset($_SESSION['usuario'])) 
+		{
+			$this->load->view('crear_video_externo');	
+			
+			
+
+		}else{
+
+			echo '<script>alert("Su sesión termino");</script>';
+			echo '<script>
+			window.location.href = "../panel/inicio";
+			</script>';
+		}
 	}
 
 
@@ -72,8 +113,21 @@ class Multimedia extends CI_Controller {
 	/*Lanza la vista de los archivos multimedia generales que stan cargados en la plataforma*/
 
 	public function lanzar_vista_listar_archivos(){
+		if (isset($_SESSION['usuario'])) 
+		{
+			$this->load->view('listar_archivos_multimedia');
+			
+			
 
-		$this->load->view('listar_archivos_multimedia');
+		}else{
+
+			echo '<script>alert("Su sesión termino");</script>';
+			echo '<script>
+			window.location.href = "../panel/inicio";
+			</script>';
+		}
+
+		
 	}
 
 
@@ -123,8 +177,8 @@ class Multimedia extends CI_Controller {
 	public function eliminar_archivo(){
 		$instancia = new Modelo_multimedia();
 		extract($_POST);
-		
-		$peticion_deleta = $instancia -> eliminar_archivo_multimedia($archivo_id);
+		//print_r($_POST);
+		$peticion_deleta = $instancia -> eliminar_archivo_multimedia($archivo_id , $arg_ruta , $tipo_archivo_arg);
 		
 	}
 
@@ -142,17 +196,22 @@ class Multimedia extends CI_Controller {
 		if(strpos($borrar, $word) !== false){
 
 			unlink($borrar);
+
+			$instancia = new Modelo_multimedia();
+			$peticion_delete = $instancia -> borrado_masivo($ruta_borrar);
 			
 			echo '<script>
 			alert("El archivo fue eliminado correctamente del servidor");
 			window.location.href = "lanzar_vista_listar_archivos";
 			</script>';
 		} else{
-			unlink($borrar);
+			//unlink($borrar);
 			echo '<script>
 			alert("El archivo fue eliminado correctamente del servidor");
 			window.location.href = "lanzar_vista_listar_archivos";
 			</script>';
+			$instancia = new Modelo_multimedia();
+			$peticion_delete = $instancia -> borrado_masivo($ruta_borrar);
 
 		}
 		

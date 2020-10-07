@@ -1,4 +1,6 @@
 <?php
+session_start();
+error_reporting(0);
 include_once "application/models/personal_model.php";
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -21,12 +23,38 @@ class Talento extends CI_Controller {
 	 */
 	public function inicio()
 	{
-		$this->load->view('crear_talento');
+		
+		if (isset($_SESSION['usuario'])) 
+		{
+			$this->load->view('crear_talento');
+			
+			
+
+		}else{
+
+			echo '<script>alert("Su sesión termino");</script>';
+			echo '<script>
+			window.location.href = "../panel/inicio";
+			</script>';
+		}
 	}
 
 	public function listar_talentos()
 	{
+		
+		if (isset($_SESSION['usuario'])) 
+		{
 		$this->load->view('listar_talentos');
+			
+			
+
+		}else{
+
+			echo '<script>alert("Su sesión termino");</script>';
+			echo '<script>
+			window.location.href = "../panel/inicio";
+			</script>';
+		}
 	}
 
 
@@ -51,7 +79,20 @@ class Talento extends CI_Controller {
 	}
 
 	public function editar_personal(){
+		
+		if (isset($_SESSION['usuario'])) 
+		{
 		$this->load->view('editar_talento');
+			
+			
+
+		}else{
+
+			echo '<script>alert("Su sesión termino");</script>';
+			echo '<script>
+			window.location.href = "../panel/inicio";
+			</script>';
+		}
 
 	}
 

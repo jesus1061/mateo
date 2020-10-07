@@ -1,10 +1,10 @@
 <?php
-include_once "application/models/blog_model.php";
 session_start();
-//echo $_SESSION['visitante'];
+error_reporting(0);
+include_once "application/models/contacto_model.php";
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Inicio extends CI_Controller {
+class Contactos extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -21,18 +21,32 @@ class Inicio extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
+	public function inicio()
 	{
-		$this->load->view('index');
-	}
-	public function salir(){
-		session_destroy();
 		
+		if (isset($_SESSION['usuario'])) 
+		{
+			$this->load->view('ver_contactos.php');
+			
+			
+
+		}else{
+
+			echo '<script>alert("Su sesión termino");</script>';
+			echo '<script>
+			window.location.href = "../panel/inicio";
+			</script>';
+		}
 	}
-	public function crear_contacto(){
-		$instancia = new Blog_model();
-		print_r($_POST);
-		extract($_POST);
-		$peticion_insert = $instancia -> crear_contacto($arg_nombre , $arg_apellido , $arg_correo , $arg_mensaje , $arg_telefono);
+
+	public function listar_contactos(){
+		$instancia = new Contacto_model();
+		$peticion_select = $instancia ->ver_contactos();
+		return $peticion_select;
 	}
+
+
+
+	
 }
+

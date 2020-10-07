@@ -11,6 +11,7 @@
 
 
 
+
 @media only screen and (max-width: 600px) {
 
 body{  overflow-x: hidden; margin: 0;background-image: url("../images/banner1.jpg"); background-size: 250%; background-repeat: no-repeat; background-attachment: fixed;}
@@ -120,8 +121,131 @@ form{-webkit-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
 
 
 }
-@media only screen and (min-width: 600px) {body{color:blue;}
-body{  overflow-x: hidden; margin: 0;background-image: url("../images/banner1.jpg"); background-size: 160%; background-repeat: no-repeat; background-attachment: fixed;}
+
+
+
+
+
+/*600*/
+
+
+@media only screen and (min-width: 600px) {body{color:black; font-style: oblique;}
+
+body{  overflow-x: hidden; margin: 0;background-image: url("../images/banner1.jpg"); background-size: 250%; background-repeat: no-repeat; background-attachment: fixed;}
+textarea{text-align: justify;}
+input[type="submit"]{background-color:#0a8e5f; padding:10px; cursor: pointer; color: white; font-weight: 900; border:none;}
+form{-webkit-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
+	-moz-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
+	box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);}
+	.item-option{border: solid 0.5px white; background-color: black; color: white; font-weight: 900; padding-top: 10px; padding-bottom: 10px; display: block;}
+	.container{width: 100%; margin: auto; display: table;border: solid 0px black;}
+	header{width: 100%; float: left; display: table;background-color: white;-webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
+		-moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
+		box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75); position: relative; z-index: 2; border: solid 0px green;display: table; padding-top: 0px; padding-bottom: 0px}
+		.title-seccion-admin{width: 100%; text-align: center; padding-top:5px; padding-bottom: 5px; }
+		.archivos-subida{width: 100%; margin: auto;}
+		#formulario-blog , #formulario-archivos{width: 98%;  padding-top: 20px; padding-bottom: 20px; margin: auto;}
+		.main{width: 100%; margin: auto;  display: table; padding-top: 0px; padding-bottom: 0px;}
+		.fa-navicon{color:#a43474; float: right; }
+		#btn-abrir-menu{font-size: 25px; cursor: pointer; display: none;}
+		.logotipo-contenedor{width: 100%; float: left;text-align: center; box-sizing: border-box; border-bottom:solid 0.5px gray; margin-top: 10px;  padding-top: 10px; padding-bottom: }
+		.logotipo-contenedor img{width: 50%; position: relative;top: -5px; margin: auto;}
+		.main-option{width: 100%;float: left;  box-sizing: border-box; display: table;}
+		.option{width: 100%; float: right; margin: auto;}
+		.option-cont{width: 100%;  float: left; box-sizing: border-box; text-align: center;  cursor: none; }
+		a{text-decoration: none;  }
+		li{list-style: none; padding-top: 5px; padding-bottom: 5px; font-size: 15px;}
+		.contenedor-dinamico-admin{width: 100%; display: table;padding-top: 0px; padding-bottom: 0px; margin: auto;}
+		.contenedor-ajustado{width: 100%;margin: auto; border: solid 0px white;  background-color: white; display:table; ;border: solid 0px white; padding-top: 0px; padding-bottom: 0px; margin-top: 10px;}
+
+			.item-option-sub{color: black; padding-top: 5px; padding-bottom: 5px; display: block; color: black;}
+			.item-option-sub:hover{font-weight: 900; color: blue;}
+			.archivos-multimedia-container{width: 100%; margin: auto;  padding-top: 0px; padding-bottom: 0px;}
+			.archivos{width: 100%; margin: auto; display: table; }
+			.cont-archivo{width: 100%; margin: auto;-webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
+				-moz-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
+				box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75); display: table; padding-top: 8px; padding-bottom: 8px;}
+				.archivo{width: 100%; float: left;  padding: 2px; box-sizing: border-box; text-align: center; margin-top: 8px; margin-bottom: 8px; }
+				.img-archivo{width: 75%; height: 120px; cursor: pointer;}
+				.encabezado-formulario{width: 100%; font-size: 20px; text-align: center; padding-top: 10px; padding-bottom: 10px; background-color: black; color: white; font-weight: 900; font-style: oblique;}
+				.datos-archivo{display: block;}
+				.archivos-multimedia-container-subida{width: 100%; margin: auto;  padding-top: 5px; padding-bottom: 5px;}
+
+				.form-group{width: 90%; margin: auto; text-align: center; }
+				#subir-archivo-file{cursor: pointer; background-color: gray; border:none; color: white; text-align: center; font-weight: 900;}
+				#subir-archivo-file-btn , #subir-url-file-btn{cursor: pointer; background-color: black; border:none; color: white; text-align: center; font-weight: 900; width: 30%; }
+				#inputFileServer{display: none;}
+				.nombre_archivo{width: 100%; height: 25px;}
+				.nombre-archivo-label{font-weight: 900; font-style: oblique;}
+				.barra-opciones-multimedia{width: 100%; border: solid 1px black; display: table;}
+				.options-multimedia{width: 100%; float: right; }
+				.option-mul{width: 50%; float: left; display: flex; align-items: center;}
+				#ico-bloques , #ico-lista{font-size: 25px;margin:auto; cursor: pointer}
+				.opciones-archivo{width: 100%; margin: auto; text-align: center; }
+				#btn-borrar-archivo{color: red; font-weight: 900; font-size: 17px; cursor: pointer;}
+
+				/*Blog*/
+
+				.formulario{width: 100%; margin: auto;  padding-top: 0px; padding-bottom: 20px; -webkit-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75);
+					-moz-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75);
+					box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75);}
+					.form-control{width: 90%; margin: auto;  padding-top: 20px; padding-bottom: 20px; text-align: center;}
+					.input-form , .input-textarea {width: 90%; height: 30px; border: solid 0.5px gray; padding-right: 10px; padding-left: 10px;}
+					.input-textarea{resize: none; min-height: 100px; }
+					.container-imagenes{width: 100%; margin: auto; margin-top: 30px;padding-top: 10px; padding-bottom: 10px; display: none;}
+					.enlace-externo{color: blue; cursor: pointer}
+					.enlace-externo:hover{font-weight: 900;}
+					#select{width: 100%; height: 30px; cursor: pointer;}
+					#seleccionador_archivo{display: none;}
+					.contenedor-tabla{width: 100%; border: solid 1px black; margin: auto;}
+					.table{width: 100%;display: table;}
+					.column-table-archivo , .column-table-talento , .column-table-encabezado-pub{width: 100%; float: left; text-align: center; padding-top: 5px; padding-bottom: 5px; border: solid 0.5px gray; box-sizing: border-box;}
+
+					.column-table-banner{width: 100%;float: left; display: flex; align-items: center;  padding-top: 5px; padding-bottom: 5px; padding-left: 10px; border: solid 0.5px gray; box-sizing: border-box; text-align: center; display: table;}
+					.column-table-banner-encabezado , .column-table-album-encabezado  {width: 100%;float: left; display: none; text-align: center;   padding-top: 5px; padding-bottom: 5px;  border: solid 0.5px gray; box-sizing: border-box; text-align: center; }
+
+					.column-table-banner .img-archivo{width: 90%; height: 200px; margin: auto;}
+					.column-table-programa-contenido{display: table;}
+					.column-table-programa-contenido .img-archivo{width: 90%; height: 200px; margin: auto;}
+					.column-table-programa-encabezado{width: 100%;float: left;   padding-top: 5px; padding-bottom: 5px;  border: solid 0.5px gray; box-sizing: border-box; text-align: center; }
+					.column-table-programa-contenido , .column-table-contenido-pub {width: 100%;float: left;   padding-top: 5px; padding-bottom: 5px;  border: solid 0.5px gray; box-sizing: border-box; text-align: center; display: table;}
+					.column-table-talento-contenido{width: 100%;float: left;   padding-top: 5px; padding-bottom: 5px;  border: solid 0.5px gray; box-sizing: border-box; text-align: center; display: table; }
+					#resultados-talento img{width: 70%; margin: auto; height: 200px;}
+					#resultados-album label:hover{font-weight: 900;}
+					.column-table-album{width: 100%;float: left;   padding-top: 5px; padding-bottom: 5px;  border: solid 0.5px gray; box-sizing: border-box; text-align: center; display: table; text-align: center;}
+					.column-table-album img{width: 80%; margin: auto; height: 200px;}
+					#resultado-consulta{background-color: white; display:table;}
+					.resultados-album{width: 100%; margin: auto;  display: table; background-color: white; display: none; float: left;}
+					.container-resul-album{width: 100%; display: table; float: left; background-color: white;}
+					.resultados-album .archivo{width: 100%; margin: auto; float: left;}
+					.item-option-sub{border-right:solid 0.5px gray; border-bottom:solid 0.5px gray;}
+
+
+					/*Modal confirmacion borrado*/
+					.modal-confirmacion-borrar-archivo{width: 100%; margin: auto; border:solid 1px black; height: 10px; background-color: white; z-index: 0; float: left; 
+					}
+
+				.contenedor-login{width: 95%; margin: auto; border:solid 1px black; margin-top: 5px;}
+				.encabezado-login{width:100%;padding-top: 10px; padding-bottom: 10px; text-align: center; display: table; font-weight: 900; font-size: 20px; background-color: black; color: white;}
+				.contenedor-login-data{width: 100%; background-color: white; margin: auto; padding-top: 10px; padding-bottom: 10px;}
+				.contenedor-login-data .form-group{width:95%; margin: auto; padding-top: 20px; padding-bottom: 20px; text-align: center; font-weight: 900;}
+				.contenedor-login-data .form-group input{width: 85%; height: 30px; margin: auto;}
+				.data-login{display: block;}
+				#btn-login{width: 40%; background-color: black;  font-size: 15px }
+				.encabezado-oculto{display:none;}
+				.encabezado-visible{display:block; padding-top: 15px;  padding-bottom: 15px; text-decoration:underline; text-align: center; }
+				.img-archivo{height: 200px;}
+				
+
+
+}
+
+
+/*768*/
+
+@media only screen and (min-width: 768px) {body{color:black; font-style: oblique;}
+
+body{  overflow-x: hidden; margin: 0;background-image: url("../img/fondo.jpg"); background-size: 200%; background-repeat: no-repeat; background-attachment: fixed;}
 textarea{text-align: justify;}
 input[type="submit"]{background-color:#0a8e5f; padding:10px; cursor: pointer; color: white; font-weight: 900; border:none;}
 form{-webkit-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
@@ -133,24 +257,24 @@ form{-webkit-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
 		-moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
 		box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75); position: relative; z-index: 2; border: solid 0px green;display: table; padding-top: 0px; padding-bottom: 0px}
 		.title-seccion-admin{width: 100%; text-align: center; padding-top:5px; padding-bottom: 5px; }
-		.archivos-subida{width: 80%; margin: auto;}
-		#formulario-blog , #formulario-archivos{width: 80%;  padding-top: 20px; padding-bottom: 20px; margin: auto;}
+		.archivos-subida{width: 80%; margin: auto;  background-color:white; }
+		#formulario-blog , #formulario-archivos{width: 100%;  padding-top: 20px; padding-bottom: 20px; margin: auto; }
 		.main{width: 100%; margin: auto;  display: table; padding-top: 0px; padding-bottom: 0px;}
 		.fa-navicon{color:#a43474; float: right; }
 		#btn-abrir-menu{font-size: 25px; cursor: pointer; display: none;}
 		.logotipo-contenedor{width: 100%; float: left;text-align: center; box-sizing: border-box; border-bottom:solid 0.5px gray; margin-top: 10px;}
-		.logotipo-contenedor img{width: 12%; position: relative;top: -5px; margin: auto;}
+		.logotipo-contenedor img{width: 30%; position: relative;top: -5px; margin: auto;}
 		.main-option{width: 100%;float: left;  box-sizing: border-box; display: table;}
 		.option{width: 100%; float: right; margin: auto;}
-		.option-cont{width: 14.285714%;  float: left; box-sizing: border-box; text-align: center;  cursor: pointer; }
+		.option-cont{width: 25%;  float: left; box-sizing: border-box; text-align: center;  cursor: pointer; }
 		a{text-decoration: none;  }
 		li{list-style: none; padding-top: 5px; padding-bottom: 5px; font-size: 15px;}
 		.contenedor-dinamico-admin{width: 100%; display: table;padding-top: 20px; padding-bottom: 20px; margin: auto;}
-		.contenedor-ajustado{width: 95%;margin: auto; border: solid 0px white;  background-color: white; height: 100%; ;border: solid 0px white; padding-top: 20px; padding-bottom: 20px;}
+		.contenedor-ajustado{width: 95%;margin: auto; border: solid 0px white;  background: none; height: 100%; ;border: solid 0px white; padding-top: 20px; padding-bottom: 20px;}
 
 			.item-option-sub{color: black;}
 			.archivos-multimedia-container{width: 90%; margin: auto;  padding-top: 5px; padding-bottom: 5px;}
-			.archivos{width: 100%; margin: auto; display: table;}
+			.archivos{width: 100%; margin: auto; display: table; background-color: white;}
 			.cont-archivo{width: 99%; margin: auto;-webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
 				-moz-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
 				box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75); display: table; padding-top: 8px; padding-bottom: 8px;}
@@ -177,7 +301,7 @@ form{-webkit-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
 
 				.formulario{width: 80%; margin: auto;  padding-top: 0px; padding-bottom: 20px; -webkit-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75);
 					-moz-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75);
-					box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75);}
+					box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75); background-color: white;}
 					.form-control{width: 90%; margin: auto;  padding-top: 20px; padding-bottom: 20px; text-align: center;}
 					.input-form , .input-textarea {width: 90%; height: 30px; border: solid 0.5px gray; padding-right: 10px; padding-left: 10px;}
 					.input-textarea{resize: none; min-height: 100px; }
@@ -187,7 +311,7 @@ form{-webkit-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
 					#select{width: 100%; height: 30px; cursor: pointer;}
 					#seleccionador_archivo{display: none;}
 					.contenedor-tabla{width: 90%; border: solid 1px black; margin: auto;}
-					.table{width: 100%;display: table;}
+					.table{width: 100%;display: table; background-color: white}
 					.column-table-archivo , .column-table-talento , .column-table-encabezado-pub{width: 25%; float: left; text-align: center; padding-top: 5px; padding-bottom: 5px; border: solid 0.5px gray; box-sizing: border-box;}
 
 					.column-table-banner{width: 33.333333%;float: left; display: flex; align-items: center;  padding-top: 5px; padding-bottom: 5px; padding-left: 10px; border: solid 0.5px gray; box-sizing: border-box; text-align: center; height: 80px;}
@@ -212,18 +336,28 @@ form{-webkit-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
 					.modal-confirmacion-borrar-archivo{width: 100%; margin: auto; border:solid 1px black; height: 10px; background-color: white; z-index: 0; float: left; 
 					}
 
-				.contenedor-login{width: 70%; margin: auto; border:solid 1px black; margin-top: 30px;}
+				.contenedor-login{width: 40%; margin: auto; border:solid 1px black; margin-top: 30px;}
 				.encabezado-login{width:100%;padding-top: 10px; padding-bottom: 10px; text-align: center; display: table; font-weight: 900; font-size: 20px; background-color: black; color: white;}
 				.contenedor-login-data{width: 100%; background-color: white; margin: auto; padding-top: 10px; padding-bottom: 10px;}
 				.contenedor-login-data .form-group{width:90%; margin: auto; padding-top: 20px; padding-bottom: 20px; text-align: center; font-weight: 900;}
 				.contenedor-login-data .form-group input{width: 80%; height: 30px; margin: auto;}
 				.data-login{display: block;}
 				#btn-login{width: 25%; background-color: black; padding-top: 5px; padding-bottom: 5px; }
+				.encabezado-oculto{display:block;}
+				.encabezado-visible{display:none;}
+				
 
 
 }
-@media only screen and (min-width: 768px) {body{color:green;}
-body{  overflow-x: hidden; margin: 0;background-image: url("../images/banner1.jpg"); background-size: 150%; background-repeat: no-repeat; background-attachment: fixed;}
+
+
+
+
+
+/*992*/
+@media only screen and (min-width: 992px) {body{color:black; font-style: oblique;}
+
+body{  overflow-x: hidden; margin: 0;background-image: url("../img/fondo.jpg"); background-size: 150%; background-repeat: no-repeat; background-attachment: fixed;}
 textarea{text-align: justify;}
 input[type="submit"]{background-color:#0a8e5f; padding:10px; cursor: pointer; color: white; font-weight: 900; border:none;}
 form{-webkit-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
@@ -235,24 +369,24 @@ form{-webkit-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
 		-moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
 		box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75); position: relative; z-index: 2; border: solid 0px green;display: table; padding-top: 0px; padding-bottom: 0px}
 		.title-seccion-admin{width: 100%; text-align: center; padding-top:5px; padding-bottom: 5px; }
-		.archivos-subida{width: 80%; margin: auto;}
-		#formulario-blog , #formulario-archivos{width: 80%;  padding-top: 20px; padding-bottom: 20px; margin: auto;}
+		.archivos-subida{width: 80%; margin: auto;  background-color:white; }
+		#formulario-blog , #formulario-archivos{width: 80%;  padding-top: 20px; padding-bottom: 20px; margin: auto; }
 		.main{width: 100%; margin: auto;  display: table; padding-top: 0px; padding-bottom: 0px;}
 		.fa-navicon{color:#a43474; float: right; }
 		#btn-abrir-menu{font-size: 25px; cursor: pointer; display: none;}
-		.logotipo-contenedor{width: 100%; float: left;text-align: center; box-sizing: border-box; border-bottom:solid 0.5px gray; margin-top: 10px;}
+		.logotipo-contenedor{width: 100%; float: left;text-align: center; box-sizing: border-box;  margin-top: 10px;}
 		.logotipo-contenedor img{width: 12%; position: relative;top: -5px; margin: auto;}
 		.main-option{width: 100%;float: left;  box-sizing: border-box; display: table;}
 		.option{width: 100%; float: right; margin: auto;}
-		.option-cont{width: 14.285714%;  float: left; box-sizing: border-box; text-align: center;  cursor: pointer; }
+		.option-cont{width: 16.666666%;  float: left; box-sizing: border-box; text-align: center;  cursor: pointer; }
 		a{text-decoration: none;  }
 		li{list-style: none; padding-top: 5px; padding-bottom: 5px; font-size: 15px;}
 		.contenedor-dinamico-admin{width: 100%; display: table;padding-top: 20px; padding-bottom: 20px; margin: auto;}
-		.contenedor-ajustado{width: 95%;margin: auto; border: solid 0px white;  background-color: white; height: 100%; ;border: solid 0px white; padding-top: 20px; padding-bottom: 20px;}
+		.contenedor-ajustado{width: 95%;margin: auto; border: solid 0px white;  background: none; height: 100%; ;border: solid 0px white; padding-top: 20px; padding-bottom: 20px;}
 
 			.item-option-sub{color: black;}
 			.archivos-multimedia-container{width: 90%; margin: auto;  padding-top: 5px; padding-bottom: 5px;}
-			.archivos{width: 100%; margin: auto; display: table;}
+			.archivos{width: 100%; margin: auto; display: table; background-color: white;}
 			.cont-archivo{width: 99%; margin: auto;-webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
 				-moz-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
 				box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75); display: table; padding-top: 8px; padding-bottom: 8px;}
@@ -279,7 +413,7 @@ form{-webkit-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
 
 				.formulario{width: 80%; margin: auto;  padding-top: 0px; padding-bottom: 20px; -webkit-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75);
 					-moz-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75);
-					box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75);}
+					box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75); background-color: white;}
 					.form-control{width: 90%; margin: auto;  padding-top: 20px; padding-bottom: 20px; text-align: center;}
 					.input-form , .input-textarea {width: 90%; height: 30px; border: solid 0.5px gray; padding-right: 10px; padding-left: 10px;}
 					.input-textarea{resize: none; min-height: 100px; }
@@ -289,7 +423,7 @@ form{-webkit-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
 					#select{width: 100%; height: 30px; cursor: pointer;}
 					#seleccionador_archivo{display: none;}
 					.contenedor-tabla{width: 90%; border: solid 1px black; margin: auto;}
-					.table{width: 100%;display: table;}
+					.table{width: 100%;display: table; background-color: white}
 					.column-table-archivo , .column-table-talento , .column-table-encabezado-pub{width: 25%; float: left; text-align: center; padding-top: 5px; padding-bottom: 5px; border: solid 0.5px gray; box-sizing: border-box;}
 
 					.column-table-banner{width: 33.333333%;float: left; display: flex; align-items: center;  padding-top: 5px; padding-bottom: 5px; padding-left: 10px; border: solid 0.5px gray; box-sizing: border-box; text-align: center; height: 80px;}
@@ -314,120 +448,27 @@ form{-webkit-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
 					.modal-confirmacion-borrar-archivo{width: 100%; margin: auto; border:solid 1px black; height: 10px; background-color: white; z-index: 0; float: left; 
 					}
 
-				.contenedor-login{width: 60%; margin: auto; border:solid 1px black; margin-top: 30px;}
+				.contenedor-login{width: 40%; margin: auto; border:solid 1px black; margin-top: 30px;}
 				.encabezado-login{width:100%;padding-top: 10px; padding-bottom: 10px; text-align: center; display: table; font-weight: 900; font-size: 20px; background-color: black; color: white;}
 				.contenedor-login-data{width: 100%; background-color: white; margin: auto; padding-top: 10px; padding-bottom: 10px;}
 				.contenedor-login-data .form-group{width:90%; margin: auto; padding-top: 20px; padding-bottom: 20px; text-align: center; font-weight: 900;}
 				.contenedor-login-data .form-group input{width: 80%; height: 30px; margin: auto;}
 				.data-login{display: block;}
 				#btn-login{width: 25%; background-color: black; padding-top: 5px; padding-bottom: 5px; }
+				.encabezado-oculto{display:block;}
+				.encabezado-visible{display:none;}
+				
 
 
 }
-@media only screen and (min-width: 992px) {body{color:orange;}
-body{  overflow-x: hidden; margin: 0;background-image: url("../images/banner1.jpg"); background-size: 100%; background-repeat: no-repeat; background-attachment: fixed;}
-textarea{text-align: justify;}
-input[type="submit"]{background-color:#0a8e5f; padding:10px; cursor: pointer; color: white; font-weight: 900; border:none;}
-form{-webkit-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
-	-moz-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
-	box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);}
-	.item-option{border: solid 0.5px white; background-color: black; color: white; font-weight: 900;}
-	.container{width: 100%; margin: auto; display: table;}
-	header{width: 100%; float: left; display: table;background-color: white;-webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75); 
-		-moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
-		box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75); position: relative; z-index: 2; display: table; padding-top: 0px; padding-bottom: 0px}
-		.title-seccion-admin{width: 100%; text-align: center; padding-top:5px; padding-bottom: 5px; }
-		.archivos-subida{width: 80%; margin: auto;}
-		#formulario-blog , #formulario-archivos{width: 80%;  padding-top: 20px; padding-bottom: 20px; margin: auto;}
-		.main{width: 100%; margin: auto;  display: table; padding-top: 0px; padding-bottom: 0px;}
-		.fa-navicon{color:#a43474; float: right; }
-		#btn-abrir-menu{font-size: 25px; cursor: pointer; display: none;}
-		.logotipo-contenedor{width: 100%; float: left;text-align: center; box-sizing: border-box; border-bottom:solid 0.5px gray; margin-top: 10px;}
-		.logotipo-contenedor img{width: 12%; position: relative;top: -5px; margin: auto;}
-		.main-option{width: 100%;float: left;  box-sizing: border-box; display: table;}
-		.option{width: 100%; float: right; margin: auto;}
-		.option-cont{width: 14.285714%;  float: left; box-sizing: border-box; text-align: center;  cursor: pointer; }
-		a{text-decoration: none;  }
-		li{list-style: none; padding-top: 5px; padding-bottom: 5px; font-size: 15px;}
-		.contenedor-dinamico-admin{width: 100%; display: table;padding-top: 20px; padding-bottom: 20px; margin: auto;}
-		.contenedor-ajustado{width: 95%;margin: auto; border: solid 0px white;  background-color: white; height: 100%; ;border: solid 0px white; padding-top: 20px; padding-bottom: 20px;}
-
-			.item-option-sub{color: black;}
-			.archivos-multimedia-container{width: 90%; margin: auto;  padding-top: 5px; padding-bottom: 5px;}
-			.archivos{width: 100%; margin: auto; display: table;}
-			.cont-archivo{width: 99%; margin: auto;-webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
-				-moz-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
-				box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75); display: table; padding-top: 8px; padding-bottom: 8px;}
-				.archivo{width: 25%; float: left;  padding: 2px; box-sizing: border-box; text-align: center; margin-top: 8px; margin-bottom: 8px; }
-				.img-archivo{width: 75%; height: 120px; cursor: pointer;}
-				.encabezado-formulario{width: 100%; font-size: 20px; text-align: center; padding-top: 10px; padding-bottom: 10px; background-color: black; color: white; font-weight: 900; font-style: oblique;}
-				.datos-archivo{display: block;}
-				.archivos-multimedia-container-subida{width: 80%; margin: auto;  padding-top: 5px; padding-bottom: 5px;}
-
-				.form-group{width: 70%; margin: auto; text-align: center; }
-				#subir-archivo-file{cursor: pointer; background-color: gray; border:none; color: white; text-align: center; font-weight: 900;}
-				#subir-archivo-file-btn , #subir-url-file-btn{cursor: pointer; background-color: black; border:none; color: white; text-align: center; font-weight: 900; width: 20%; }
-				#inputFileServer{display: none;}
-				.nombre_archivo{width: 100%; height: 25px;}
-				.nombre-archivo-label{font-weight: 900; font-style: oblique;}
-				.barra-opciones-multimedia{width: 100%; border: solid 1px black; display: table;}
-				.options-multimedia{width: 10%; float: right; }
-				.option-mul{width: 50%; float: left; display: flex; align-items: center;}
-				#ico-bloques , #ico-lista{font-size: 25px;margin:auto; cursor: pointer}
-				.opciones-archivo{width: 100%; margin: auto; text-align: center; }
-				#btn-borrar-archivo{color: red; font-weight: 900; font-size: 17px; cursor: pointer;}
-
-				/*Blog*/
-
-				.formulario{width: 80%; margin: auto;  padding-top: 0px; padding-bottom: 20px; -webkit-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75);
-					-moz-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75);
-					box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75);}
-					.form-control{width: 90%; margin: auto;  padding-top: 20px; padding-bottom: 20px; text-align: center;}
-					.input-form , .input-textarea {width: 90%; height: 30px; border: solid 0.5px gray; padding-right: 10px; padding-left: 10px;}
-					.input-textarea{resize: none; min-height: 100px; }
-					.container-imagenes{width: 93%; margin: auto; margin-top: 30px;padding-top: 10px; padding-bottom: 10px; display: none;}
-					.enlace-externo{color: blue; cursor: pointer}
-					.enlace-externo:hover{font-weight: 900;}
-					#select{width: 100%; height: 30px; cursor: pointer;}
-					#seleccionador_archivo{display: none;}
-					.contenedor-tabla{width: 90%; border: solid 1px black; margin: auto;}
-					.table{width: 100%;display: table;}
-					.column-table-archivo , .column-table-talento , .column-table-encabezado-pub{width: 25%; float: left; text-align: center; padding-top: 5px; padding-bottom: 5px; border: solid 0.5px gray; box-sizing: border-box;}
-
-					.column-table-banner{width: 33.333333%;float: left; display: flex; align-items: center;  padding-top: 5px; padding-bottom: 5px; padding-left: 10px; border: solid 0.5px gray; box-sizing: border-box; text-align: center; height: 80px;}
-					.column-table-banner-encabezado , .column-table-album-encabezado  {width: 33.333333%;float: left;   padding-top: 5px; padding-bottom: 5px;  border: solid 0.5px gray; box-sizing: border-box; text-align: center; }
-					.column-table-banner .img-archivo{width: 50%; height: 70px; margin: auto;}
-					.column-table-programa-contenido .img-archivo{width: 60%; height: 80px; margin: auto;}
-					.column-table-programa-encabezado{width: 25%;float: left;   padding-top: 5px; padding-bottom: 5px;  border: solid 0.5px gray; box-sizing: border-box; text-align: center; }
-					.column-table-programa-contenido , .column-table-contenido-pub {width: 25%;float: left;   padding-top: 5px; padding-bottom: 5px;  border: solid 0.5px gray; box-sizing: border-box; text-align: center; height: 150px; display: flex; align-items: center;}
-					.column-table-talento-contenido{width: 25%;float: left;   padding-top: 5px; padding-bottom: 5px;  border: solid 0.5px gray; box-sizing: border-box; text-align: center; height: 100px; display: flex; align-items: center; }
-					#resultados-talento img{width: 35%; margin: auto; height: 90%;}
-					#resultados-album label:hover{font-weight: 900;}
-					.column-table-album{width: 33.333333%;float: left;   padding-top: 5px; padding-bottom: 5px;  border: solid 0.5px gray; box-sizing: border-box; text-align: center; height: 100px ;display: flex; align-items: center;}
-					.column-table-album img{width: 35%; margin: auto; height: 90%;}
-					#resultado-consulta{background-color: white; display:table;}
-					.resultados-album{width: 100%; margin: auto;  min-height: 225px; background-color: white; display: none; }
-					.container-resul-album{width: 100%; display: table; float: left; background-color: white;}
-					.resultados-album .archivo{width: 20%; margin: auto; float: left;}
-					.item-option-sub{border-right:solid 0.5px gray; border-bottom:solid 0.5px gray;}
 
 
-					/*Modal confirmacion borrado*/
-					.modal-confirmacion-borrar-archivo{width: 100%; margin: auto; border:solid 1px black; height: 10px; background-color: white; z-index: 0; float: left; 
-					}
-
-				.contenedor-login{width: 45%; margin: auto; border:solid 1px black; margin-top: 30px;}
-				.encabezado-login{width:100%;padding-top: 10px; padding-bottom: 10px; text-align: center; display: table; font-weight: 900; font-size: 20px; background-color: black; color: white;}
-				.contenedor-login-data{width: 100%; background-color: white; margin: auto; padding-top: 10px; padding-bottom: 10px;}
-				.contenedor-login-data .form-group{width:90%; margin: auto; padding-top: 20px; padding-bottom: 20px; text-align: center; font-weight: 900;}
-				.contenedor-login-data .form-group input{width: 80%; height: 30px; margin: auto;}
-				.data-login{display: block;}
-				#btn-login{width: 25%; background-color: black; padding-top: 5px; padding-bottom: 5px; }
 
 
-}
+/*1200*/
 
 @media only screen and (min-width: 1200px) {body{color:black; font-style: oblique;}
+
 body{  overflow-x: hidden; margin: 0;background-image: url("../img/fondo.jpg"); background-size: 100%; background-repeat: no-repeat; background-attachment: fixed;}
 textarea{text-align: justify;}
 input[type="submit"]{background-color:#0a8e5f; padding:10px; cursor: pointer; color: white; font-weight: 900; border:none;}
@@ -435,7 +476,7 @@ form{-webkit-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
 	-moz-box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);
 	box-shadow: 2px 1px 13px 1px rgba(0,0,0,0.75);}
 	.item-option{border: solid 0.5px white; background-color: black; color: white; font-weight: 900;}
-	.container{width: 100%; margin: auto; display: table;border: solid 0px black;}
+	.container{width: 100%; margin: auto; display: table;border: }
 	header{width: 100%; float: left; display: table;background-color: white;-webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75); 
 		-moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
 		box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75); position: relative; z-index: 2; border: solid 0px green;display: table; padding-top: 0px; padding-bottom: 0px}

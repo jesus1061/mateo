@@ -5,8 +5,23 @@ include_once "Programas.php";
 include_once "Talento.php";
 include_once "Blog.php";
 include_once "Galeria.php";
+include_once "Contactos.php";
 
 class Select_controller{
+
+
+
+	public function crear_visita(){
+		$instancia = new Blog();
+		$peticion_insert = $instancia -> crear_visita();
+		return $peticion_insert;	
+	}
+
+	public function consultar_visitas(){
+		$instancia = new Blog();
+		$peticion_select = $instancia -> listar_visitas();
+		return $peticion_select;	
+	}
 
 	public function listar_archivos(){
 		$instancia = new Multimedia();
@@ -14,6 +29,8 @@ class Select_controller{
 		return $peticion_select;
 
 	}
+
+
 
 
 	public function listar_banners(){
@@ -98,6 +115,12 @@ class Select_controller{
 		$peticion_select = $instancia -> listar_elemento_galeria__unico_consulta($elemento);
 		return $peticion_select;
 
+	}
+
+	public function listar_contactos(){
+		$instancia = new Contactos();
+		$peticion_select = $instancia ->listar_contactos();
+		return $peticion_select;	
 	}
 
 

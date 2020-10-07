@@ -60,7 +60,7 @@ foreach($peticion_select_unico as $album){
          
 
          <div class="form-control">
-          <label for="" class="label-form">Titulo del albúm</label>
+          <label for="" class="label-form">Titulo del albúm  <span style="color:red; font-weight:900;">(Este campo es obligatorio que lo llenes)</span></label>
           <br>
           <br>
           <input type="text" class="input-form" id="album"  name="album_titulo" placeholder="Titulo para el albúm" required value="<?php echo $album['album_titulo']?>">
@@ -74,7 +74,7 @@ foreach($peticion_select_unico as $album){
 
 
         <div class="form-control">
-          <label for="" class="label-form">Cargar portada principal a utilizar</label>
+          <label for="" class="label-form">Cargar portada principal a utilizar  <span style="color:red; font-weight:900;">(Este campo es obligatorio que lo llenes)</span></label>
           <br>
           <br>
           <input type="text" id="btn-abrir-multimedia" name="album_portada_principal"  placeholder="Seleccionar archivo multimedia"   required  class="input-form"  style="background-color: gray; color: white; font-weight: 900; cursor: pointer" readonly value="<?php echo $album['album_portada_principal']?>"> 

@@ -1,4 +1,6 @@
 <?php
+session_start();
+error_reporting(0);
 include_once "application/models/banner_model.php";
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -21,13 +23,40 @@ class Banner extends CI_Controller {
 	 */
 	public function inicio()
 	{
-		$this->load->view('crear_banner.php');
+		
+		if (isset($_SESSION['usuario'])) 
+		{
+			$this->load->view('crear_banner.php');
+			
+			
+
+		}else{
+
+			echo '<script>alert("Su sesión termino");</script>';
+			echo '<script>
+			window.location.href = "../panel/inicio";
+			</script>';
+		}
 	}
 
 	/*Lanza la vista para observar banners*/
 	public function listar_banners()
 	{
-		$this->load->view('listar_banners.php');
+		
+
+		if (isset($_SESSION['usuario'])) 
+		{
+			$this->load->view('listar_banners.php');
+			
+			
+
+		}else{
+
+			echo '<script>alert("Su sesión termino");</script>';
+			echo '<script>
+			window.location.href = "../panel/inicio";
+			</script>';
+		}
 	}
 
 

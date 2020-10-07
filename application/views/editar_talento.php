@@ -42,12 +42,12 @@ foreach($peticion_select_unico as $personal){
 
         <form action="editar_talento_datos" method="post" class="formulario">
           <div class="encabezado-formulario">
-           Creación de Funcionarios
+           Edición de Funcionarios
          </div>
 
 
          <div class="form-control">
-           <label for="" class="label-archivo campos-archivo" style="color:black; font-weight:900;">Codigo del funcionario </label>
+           <label for="" class="label-archivo campos-archivo" style="color:black; font-weight:900;">Codigo del funcionario  </label>
            <br>
            <br>
            <input type="text" class="input-form" name="personal_id"   placeholder="Nombre del funcionario" id="nombre_personal" value="<?php echo $personal['personal_id'] ?>" readonly>

@@ -1,10 +1,7 @@
 <?php
-include_once "application/models/blog_model.php";
-session_start();
-//echo $_SESSION['visitante'];
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Inicio extends CI_Controller {
+class Blog extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -21,18 +18,8 @@ class Inicio extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
-	{
-		$this->load->view('index');
-	}
-	public function salir(){
-		session_destroy();
-		
-	}
-	public function crear_contacto(){
-		$instancia = new Blog_model();
-		print_r($_POST);
-		extract($_POST);
-		$peticion_insert = $instancia -> crear_contacto($arg_nombre , $arg_apellido , $arg_correo , $arg_mensaje , $arg_telefono);
-	}
+	
+
+	
+	
 }

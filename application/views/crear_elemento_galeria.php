@@ -38,7 +38,7 @@ $peticion_select_albumnes = $instancia -> listar_albumnes();
 
         <form action="guardar_elemento" method="post" class="formulario">
           <div class="encabezado-formulario">
-           Crear elemento galeria
+           Crear elemento galería
          </div>
          
 

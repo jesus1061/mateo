@@ -56,6 +56,14 @@ $(document).ready(function(){
 		window.location.href = '../programas/listar_programas';
 	});
 
+	$("#opcion15").click(function(){
+		window.location.href = '../blog/listar_visitas_conteo';
+	});
+
+	$("#opcion16").click(function(){
+		window.location.href = '../contactos/inicio';
+	});
+
 
 	$("#opcion17").click(function(){
 		window.location.href = '../talento/inicio';
@@ -65,5 +73,19 @@ $(document).ready(function(){
 	$("#opcion18").click(function(){
 		window.location.href = '../talento/listar_talentos';
 	});
+
+	$(".btn-cerrar-sesion").click(function(){
+		window.location.href = '../panel/salir';
+	});
+
+	$('input , textarea').bind('keypress', function (event) { 
+		var regex = new RegExp("^[a-zA-Z0-9]+$");
+		var key = String.fromCharCode(!event.charCode ? event.which : event.charCode); if (!regex.test(key)) { event.preventDefault(); return false; } });
+
+	
+	$("input , textarea").attr("autocomplete" ,"off");
+	$("body").attr("oncopy","return false");
+	$("body").attr("onpaste","return false");
+
 
 });

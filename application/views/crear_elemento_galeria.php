@@ -105,7 +105,7 @@ $peticion_select_albumnes = $instancia -> listar_albumnes();
             $(".cont-archivo .img-archivo").each(function(){
               var tipo = $(this).attr("id");
               if(tipo == "ve"){
-                $(this).parent().remove();
+                
               }
               if(tipo == "ii"){
                var ruta_sistema = $(this).attr("src");
@@ -168,6 +168,10 @@ $peticion_select_albumnes = $instancia -> listar_albumnes();
     /*Abre los archivos multimedia para su posterior elección*/
     $("#btn-abrir-multimedia").click(function(){
       $(".container-imagenes").css("display","table");
+      $("iframe").each(function(){
+        
+        $(this).parent().parent().remove();
+      });
     });
 
 

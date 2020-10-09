@@ -84,7 +84,7 @@ $peticion_select = $instancia -> listar_archivos();
             $(".cont-archivo .img-archivo").each(function(){
               var tipo = $(this).attr("id");
               if(tipo == "ve"){
-                $(this).parent().remove();
+               
               }
               if(tipo == "ii"){
                var ruta_sistema = $(this).attr("src");
@@ -144,6 +144,10 @@ $peticion_select = $instancia -> listar_archivos();
     /*Abre los archivos multimedia para su posterior elección*/
     $("#btn-abrir-multimedia").click(function(){
       $(".container-imagenes").css("display","table");
+      $("iframe").each(function(){
+        
+        $(this).parent().parent().remove();
+      });
     });
 
      $(".img-archivo").click(function(){
@@ -157,6 +161,7 @@ $peticion_select = $instancia -> listar_archivos();
       } else{
        var ruta_seleccionada = $(this).attr("src");
        $("#btn-abrir-multimedia").val(ruta_seleccionada);
+        validacion_banner = 1;
      }
 
    });

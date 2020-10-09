@@ -187,47 +187,46 @@ class Multimedia extends CI_Controller {
 	public function eliminar_ruta_archivo (){
 		extract($_POST);
 		//print_r($_POST);
-		$ruta_borrar;
-		$borrar = substr($ruta_borrar, 3);
-		$word = "http";
+		
 
-
-
-		if(strpos($borrar, $word) !== false){
-
+		if($tipo_archivo == "ii"){
+			//echo "Borrar interna";
+			$borrar = substr($ruta_borrar, 3);
 			unlink($borrar);
-
+			$instancia = new Modelo_multimedia();
+			$peticion_delete = $instancia -> borrado_masivo($borrar);
+			
+			echo '<script>
+			alert("El archivo fue eliminado correctamente del servidor 1");
+			window.location.href = "lanzar_vista_listar_archivos";
+			</script>';
+		} else{
 			$instancia = new Modelo_multimedia();
 			$peticion_delete = $instancia -> borrado_masivo($ruta_borrar);
 			
 			echo '<script>
-			alert("El archivo fue eliminado correctamente del servidor");
+			alert("El archivo fue eliminado correctamente del servidor 1");
 			window.location.href = "lanzar_vista_listar_archivos";
 			</script>';
-		} else{
-			//unlink($borrar);
-			echo '<script>
-			alert("El archivo fue eliminado correctamente del servidor");
-			window.location.href = "lanzar_vista_listar_archivos";
-			</script>';
-			$instancia = new Modelo_multimedia();
-			$peticion_delete = $instancia -> borrado_masivo($ruta_borrar);
-
 		}
 		
-
-		
-
-
-
-		
-
-
-
 
 
 	}
 
 
-	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

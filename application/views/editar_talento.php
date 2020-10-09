@@ -120,7 +120,7 @@ foreach($peticion_select_unico as $personal){
             $(".cont-archivo .img-archivo").each(function(){
               var tipo = $(this).attr("id");
               if(tipo == "ve"){
-                $(this).parent().remove();
+              
               }
               if(tipo == "ii"){
                var ruta_sistema = $(this).attr("src");
@@ -207,6 +207,10 @@ foreach($peticion_select_unico as $personal){
     /*Abre los archivos multimedia para su posterior elección*/
     $("#btn-abrir-multimedia").click(function(){
       $(".container-imagenes").css("display","table");
+       $("iframe").each(function(){
+        
+        $(this).parent().parent().remove();
+      });
     });
 
     $(".img-archivo").click(function(){
